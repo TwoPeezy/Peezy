@@ -1,0 +1,18 @@
+/*This is how you apply styles to 'tags'*/
+
+h1 {
+    color: white;
+    background: black;
+}
+h2 {
+    background: lightgray;
+    padding: 5em;
+    border: 5px solid black;
+}
+p {
+    padding: 5em;
+    font-size: 2px;
+}
+a {
+    color: magenta;
+}
