@@ -42,11 +42,11 @@ function dog(name, age, breed) {
 }
 
 // You then call the function as if you were creating a new object...
-var dog = new dog("Dilly", 14, "Poodle");
+var dog = new dog("Smudge", 11, "Cavalier");
 dog.personality = "Yoked";
 
 function alertDogDetails() {
-    var details = "Name: " + dog.name + "\nBreed: " + dog.breed + "\nAge: " + dog.age;
+    var details = "Name: " + dog.name + "\nBreed: " + dog.breed + "\nAge: " + dog.age + dog.personality;
     alert(details);
 }
 /*
