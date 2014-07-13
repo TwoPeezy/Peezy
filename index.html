@@ -13,16 +13,25 @@
     
     Uncomment the below line to link and apply the stylesheet, main.css
     -->
-<link rel=stylesheet href="assets/css/main.css">
+
+    <script src="assets/js/engine.js"></script>
+    <link rel=stylesheet href="assets/css/main.css">
 </head>
 
-<body id="myBody">
+<body>
 
-    <h1>This is Header1 tag.</h1>
-    <h2>This is Header2 tag.</h2>
-    <p>Paragraph tag.</p>
-    <a href="http://google.com">This is a link.</a>
-
+    <div id="myBody">
+        <h1>This is Header1 tag.</h1>
+        <h2> This is Header2 tag. </h2>
+        <p>Paragraph tag.</p>
+        <a href="http://google.com">This is a link.</a>
+        <form>
+            <input type=button value="Click to hack" onclick="changeHTML()">
+            </input>
+            <input type=button value="Alert Dog Details" onclick="alertDogDetails()">
+            </input>
+        </form>
+    </div>
 </body>
 
 </html>
