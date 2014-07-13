@@ -1,18 +1,31 @@
-/*This is how you apply styles to 'tags'*/
-
-h1 {
-    color: white;
-    background: black;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-h2 {
-    background: lightgray;
-    padding: 5em;
-    border: 5px solid black;
+#scene {} #scene-image {
+    padding: 2em;
+    height: 25em;
+    width: 25em;
 }
-p {
-    padding: 5em;
-    font-size 5em;
+#scene-description {
+    margin-top: 3em;
+    position: absolute;
+    font-family: monospace, serif;
+    font-size: 2em;
+    padding: .5em;
 }
-a {
-    color: magenta;
+#scene-options {
+    margin-top: 2em;
+    text-align: center;
+    padding: 2em;
+}
+span.option {
+    font-family: monospace;
+    font-size: 2em;
+    cursor: pointer;
+    padding: .3em;
+    border: 1px solid black;
 }
