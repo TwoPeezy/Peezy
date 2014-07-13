@@ -1,59 +1,30 @@
-/*
+$(document).ready(function () {
 
-    Quick and dirty JavaScript tutorial
+    init();
 
-*/
+    function init() {
+        var image = "http://patrickeddy.com/assets/img/orange.jpeg";
+        var desc = "Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
+        var options = ["New Game", "Load Game", "About"];
+        var menu = new Scene(image, desc, options);
+        menu.startScene();
+    }
 
-// This is a variable
-var myVariable;
+    function Scene(image, description, options) {
+        // Image floated left
+        this.image = image;
+        // Scene description next to the image
+        this.description = description;
+        // Array of menu options
+        this.options = options;
+        // One a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
+        this.startScene = function () {
+            $("#scene-image").attr("src", this.image);
+            $("#scene-description").html(this.description);
+            for (var current in this.options) {
+                $("#scene-options").append("<span class='option'>" + this.options[current] + "</span>");
+            }
+        }
+    }
 
-// This is a function
-function myFunction() {
-    // Do something clever here.
-}
-
-// Functions can take parameters of course
-function myFunction(x) {
-
-}
-
-//Lets try to send in and manipulate a varable
-var x = 10;
-
-function halfOf(x) {
-    x /= 2; // Shortcut for x = x/2
-    return x;
-}
-// Calling the function and passing the x-variable in
-var halfOfXVariable = halfOf(x);
-// Setting the returned value to the halfOfXVariable
-
-// You can also change elements in HTML by id with vanilla JS
-function changeHTML() {
-    document.getElementById("myBody").innerHTML = "Hacked, muhaha!";
-}
-
-// To define a 'class, you make a 'function' act like an object in any other language...
-function dog(name, age, breed) {
-    this.name = name;
-    this.age = age;
-    this.breed = breed;
-    this.personality = "";
-}
-
-// You then call the function as if you were creating a new object...
-var dog = new dog("Dilly", 14, "Poodle");
-dog.personality = "Yoked";
-
-function alertDogDetails() {
-    var details = "Name: " + dog.name + "\nBreed: " + dog.breed + "\nAge: " + dog.age;
-    alert(details);
-}
-/*
-
-    Pretty much all you need to know atm.
-    
-    The power of JS is how many libraries there are out there, like JQuery, NodeJS, Angular and many more.
-    
-    
-*/
+});
