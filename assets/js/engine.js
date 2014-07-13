@@ -46,7 +46,7 @@ var dog = new dog("Smudge", 11, "Cavalier");
 dog.personality = "Yoked";
 
 function alertDogDetails() {
-    var details = "Name: " + dog.name + "\nBreed: " + dog.breed + "\nAge: " + dog.age + dog.personality;
+    var details = "Name: " + dog.name + "\nBreed: " + dog.breed + "\nAge: " + dog.age + "\nGainz status: " + dog.personality;
     alert(details);
 }
 /*
