@@ -50,5 +50,16 @@
             "scene": "prison",
             "id": 1
         }]
+    },
+    "about": {
+        "id": "about",
+        "name": "Fine Details",
+        "image": "http://www.gmoabugampaha.org/wp-content/uploads/2014/02/About.jpg",
+        "descripton": "We're just some dudes that wanted to make the dumbest game possible, while having the time of our life learning and writing witty banter. We aren't actually racist.",
+        "options": [{
+            "text": "Back to menu",
+            "scene": "menu",
+            "id": 0;
+        }]
     }
 }
