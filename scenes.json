@@ -1,32 +1,54 @@
 {
-    "1": {
-        "id": 1,
-        "name": "Crystal",
-        "image": "assets/img/Crystal.jpg",
-        "description": "Stuff happens, bro.",
-        "options": [{
-            "text": "Talk to yourself",
-            "scene": "menu",
-            "id": 0
-        }, {
-            "text": "Poop",
-            "scene": "2",
-            "id": 1
-        }, {
-            "text": "Kill",
-            "scene": "prison",
-            "id": 2
-        }]
-    },
     "prison": {
         "id": "prison",
         "name": "Prison",
-        "image": "assets/img/Crystal.jpg",
-        "description": "You\"re in prison, stupid!",
+        "image": "http://funnytimes.com/wp-content/uploads/2002/08/200208142.jpg",
+        "description": "Why'd you do that? Look where that got you, stupid.",
         "options": [{
-            "text": "Die",
+            "text": "Die and Reincarnate yourself.",
             "scene": "menu",
             "id": 0
+        }]
+    },
+    "about": {
+        "id": "about",
+        "name": "Fine details",
+        "image": "https://c1.staticflickr.com/3/2896/14260473090_5d5ed7d089_z.jpg",
+        "description": "We're a little in love with stupidity. We also needed a place to channel that stupidity, and also a playground to test our wits and writing skills. Thus Peezy - Noire was born.",
+        "options": [{
+            "text": "Back to menu",
+            "scene": "menu",
+            "id": 0
+        }]
+    },
+    "1": {
+        "id": 1,
+        "name": "Red Woman",
+        "image": "assets/img/Crystal.jpg",
+        "description": "A woman - I figure - clamures her way through my office door. 'What a way to enter', I mumble. She's pretty though. Red dress caressing her curves like shrink wrap. I wonder what she wants.",
+        "options": [{
+            "text": "'Who are you?'",
+            "scene": "2",
+            "id": 0
+        }, {
+            "text": "kill",
+            "scene": "prison",
+            "id": 1
+        }]
+    },
+    "2": {
+        "id": 2,
+        "name": "Crystal",
+        "image": "assets/img/Crystal.jpg",
+        "description": "'What do you need?' I ask sternly, diverting the mood of the room that was started by her brisk entrance and the way she was walking toward me.'You busy'? She asks, 'Because I have the case that throw you into the Big Leagues'.",
+        "options": [{
+            "text": "'What is it?'",
+            "scene": "3",
+            "id": 0
+        }, {
+            "text": "kill",
+            "scene": "prison",
+            "id": 1
         }]
     }
 }
