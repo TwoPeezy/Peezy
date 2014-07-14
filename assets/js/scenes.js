@@ -1,5 +1,11 @@
-/*==        Scene skeletal      ==*/
+/*      
+ */
+
+var sceneID = 0;
+
 function Scene(name, image, description, options) {
+    // Keeping track of scene ID for saving
+    this.id = sceneID;
     // Name of scene
     this.name = name;
     // Image floated left
@@ -10,64 +16,72 @@ function Scene(name, image, description, options) {
     this.options = options;
     // One a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
     this.startScene = function () {
+        $("title").text("Peezy - " + this.name);
         $("#scene-image").attr("src", this.image);
         $("#scene-description").html(this.description);
+
         // Clear the options, so they don't carry over on a new scene
         $("#scene-options").text("");
+
+        // Setting up the menu option buttons with their ids
         for (var current = 0; current < this.options.length; current++) {
             $("#scene-options").append("<span class='option' id=" + current + ">" + this.options[current].text + "</span>");
             this.options[current].id = current;
         }
     }
 }
-/*==        MenuOption object       ==*/
+
 function MenuOption(text, scene) {
     this.id;
     this.text = text;
     this.scene = scene;
 }
 
-/*==    Use this object to setup Scenes ==*/
 function SceneController() {
-    // Scene dictionary
-    this.scenes = [];
-    this.currentScene;
 
+    /* Use this variable to get or set the scenes in this game */
+    this.scenes = [];
+    /* This is the current scene the game is on */
+    this.currentScene;
     /*
     
-            MENU SCENE
-            
+            >>> WARNING: SPOILERS <<<
+    All of the scenes that make up the game below.
+    
     */
+
+    /*
+    MENU SCENE
+        */
     var menuImage = "assets/img/PeezyMain.png";
     var menuDesc = "Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
-    var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Load Game", localStorage.getItem("savedscene")), new MenuOption("About", 'about')];
+    var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Continue", 'scene' + localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
     this.scenes['menu'] = new Scene("menu", menuImage, menuDesc, menuOptions);
 
     /*
-
-            PRISON SCENE
-
-    */
-
-    var prisonImage = "assets/img/PeezyMain.png";
-    var prisonDesc = "You are in prison, stupid";
-    var prisonOptions = [new MenuOption("Die", 'menu')];
-    this.scenes['prison'] = new Scene("prison", prisonImage, prisonDesc, prisonOptions);
-
-
+    PRISON SCENE
+        */
+    this.scenes['prison'] = new Scene("prison", "assets/img/PeezyMain.png", "You are in prison, stupid", [new MenuOption("Die", 'menu')]);
+    sceneID++;
 
     /*
-    
-            SCENE 1
-    
-    */
+    SCENE 1
+        */
 
-    var scene1Image = "assets/img/Crystal.jpg";
-    var scene1Desc = "Stuff happens, bro.";
-    var scene1Options = [new MenuOption("Talk to yourself", 'menu'), new MenuOption("Poop", 'poop'), new MenuOption("Kill", 'prison')];
-    // This scene is under 'menu' in the dictionary
-    this.scenes['scene1'] = new Scene("scene1", scene1Image, scene1Desc, scene1Options);
+    /* The image url */
+    var imageURL = "assets/img/Crystal.jpg";
 
+    /* The description */
+    var description = "Stuff happens, bro.";
+
+    /* Menu options that lead to new scenes */
+    var buttonOptions = [new MenuOption("Talk to yourself", 'menu'), new MenuOption("Poop", 'scene2'), new MenuOption("Kill", 'prison')];
+
+    /* This scene is under 'scene1' in the dictionary */
+    this.scenes['scene' + sceneID] = new Scene("Crystal", imageURL, description, buttonOptions);
+
+    /* Increment the ID so that scenes are in order scene1, scene2, scene3 */
+    sceneID++;
 
 }

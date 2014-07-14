@@ -1,0 +1,43 @@
+/*
+         ===   ==== ==== ====== ==  ==
+        ||  || |____|____    //   \\// 
+        ||--   |    |       //     ||
+        ||     |____|____ _//___   ||
+
+        This file is the main functionality behind this game.
+        In order to add a Scene, it requires 4 parameters.
+            1. Name of the scene (Goes on title of window)
+            2. A picture resource URI
+            3. Description for the scene
+            4. Array of "MenuOption"s
+        ==~
+        =-  new Scene(name, picture, description, array(MenuOptions))
+        ==~
+        
+        For more help, look at Scene1 for an example on how to add one
+    */
+
+
+
+/* 
+SCENE 1
+    */
+{
+    "id": 1,
+    "name": "Crystal",
+    "image": "assets/img/Crystal.jpg",
+    "description": "Stuff happens, bro.",
+    "options": [{
+        "text": "Talk to yourself",
+        "scene": "menu",
+        "id": 0
+    }, {
+        "text": "Poop",
+        "scene": "scene2",
+        "id": 1
+    }, {
+        "text": "Kill",
+        "scene": "prison",
+        "id": 2
+    }]
+}
