@@ -41,18 +41,10 @@ function SceneController() {
 
     /* Use this variable to get or set the scenes in this game */
     this.scenes = [];
-    var sceneData = [];
-    $.getJSON("assets/js/scenes.json", function (jsondata) {
-        $.each(data, function (data) {
-            sceneData['scene' + data.id] = new Scene(data.name, data.description, data.options);
-        });
-    });
-
-
-
-    /* This is the current scene the game is on */
-    this.currentScene;
-
+    var scenedata = createGameScenes();
+    for (var scene in scenedata) {
+        this.scenes['scene' + scenedata[scene].id] = scenedata[scene];
+    }
     /*
     MENU SCENE
         */
@@ -60,7 +52,11 @@ function SceneController() {
     var menuDesc = "Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
     var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Continue", 'scene' + localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
-    this.scenes['menu'] = new Scene("menu", menuImage, menuDesc, menuOptions);
-    console.log(JSON.stringify(this.scenes.scene1));
+    this.scenes['menu'] = new Scene("Noire", menuImage, menuDesc, menuOptions);
+
+    /* This is the current scene the game is on */
+    this.currentScene;
+
+//    console.log(JSON.stringify(this.scenes));
 
 }

@@ -19,9 +19,8 @@
         
         For more help, look at Scene1 for an example on how to add one
     */
-{
-    [
-
+function createGameScenes() {
+    var scenes = [
     /* 
         SCENE 1
                 */
@@ -66,6 +65,7 @@
                 "scene": "menu",
                 "id": 0
             }]
-    }
-    ]
+    }]
+
+    return scenes;
 }

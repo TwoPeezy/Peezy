@@ -11,9 +11,11 @@ $(document).ready(function () {
         sceneController.currentScene = menu;
     }
     $("#scene-options").on('click', '.option', function () {
+
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
-        alert(console.log(nextScene));
+        console.log(JSON.stringify(nextScene));
+
         nextScene.startScene();
         sceneController.currentScene = nextScene;
 
