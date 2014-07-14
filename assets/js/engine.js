@@ -1,7 +1,9 @@
 var sceneController;
+var isMobile;
 $(document).ready(function () {
 
     init();
+    checkScreenSize();
     //    localStorage.clear();
 
     function init() {
@@ -36,4 +38,18 @@ $(document).ready(function () {
         window.scrollTo(0, 0);
 
     });
+
+
+    /*
+    Mobile support - Screen resizing
+        */
+    function checkScreenSize() {
+        if ((window.innerWidth / window.innerHeight) < 4 / 3) {
+            $("#scene-image").css("float", "none");
+        }
+    }
+    $(window).resize(function () {
+        $("#scene-image").css("float", "left");
+        checkScreenSize();
+    })
 });
