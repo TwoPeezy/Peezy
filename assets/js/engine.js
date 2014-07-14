@@ -15,12 +15,13 @@ $(document).ready(function () {
             $("#1").css("display", "none");
         }
     }
+    /*
+    Click Handler
+        */
     $("#scene-options").on('click', '.option', function () {
-
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
-        console.log(JSON.stringify(nextScene));
-
+        // Start the next scene
         startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
         sceneController.currentScene = nextScene;
 
@@ -29,8 +30,10 @@ $(document).ready(function () {
             try {
                 localStorage.setItem("savedgame", sceneController.currentScene.id);
             } catch (e) {
-                alert(e.message);
+                console.log("Can't save progress" + e.message);
             }
         }
+        window.scrollTo(0, 0);
+
     });
 });
