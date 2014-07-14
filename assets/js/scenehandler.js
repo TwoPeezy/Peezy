@@ -1,5 +1,3 @@
-/*      
- */
 function Scene(name, image, description, options) {
     // Keeping track of scene ID for saving
     this.id;

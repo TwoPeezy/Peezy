@@ -8,8 +8,8 @@ body {
 #scene {} #scene-image {
     float: left;
     z-index: 0;
-    height: 25em;
-    width: 25em;
+    height: 15em;
+    width: 15em;
     margin: 1em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
