@@ -9,4 +9,9 @@ $(document).ready(function () {
         menu.startScene();
         sceneController.currentScene = menu;
     }
+    $("#scene-options").on('click', '.option', function () {
+        var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
+        nextScene.startScene();
+        sceneController.currentScene = nextScene;
+    });
 });

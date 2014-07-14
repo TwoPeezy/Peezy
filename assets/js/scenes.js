@@ -12,6 +12,8 @@ function Scene(name, image, description, options) {
     this.startScene = function () {
         $("#scene-image").attr("src", this.image);
         $("#scene-description").html(this.description);
+        // Clear the options, so they don't carry over on a new scene
+        $("#scene-options").text("");
         for (var current = 0; current < this.options.length; current++) {
             $("#scene-options").append("<span class='option' id=" + current + ">" + this.options[current].text + "</span>");
             this.options[current].id = current;
@@ -38,9 +40,22 @@ function SceneController() {
     */
     var menuImage = "assets/img/PeezyMain.png";
     var menuDesc = "Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
-    var menuOptions = [new MenuOption("New Game", this.scenes['scene1']), new MenuOption("Load Game", localStorage.getItem("savedscene")), new MenuOption("About", this.scenes['about'])];
+    var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Load Game", localStorage.getItem("savedscene")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
     this.scenes['menu'] = new Scene("menu", menuImage, menuDesc, menuOptions);
+
+    /*
+
+            PRISON SCENE
+
+    */
+
+    var prisonImage = "assets/img/PeezyMain.png";
+    var prisonDesc = "You are in prison, stupid";
+    var prisonOptions = [new MenuOption("Die", 'menu')];
+    this.scenes['prison'] = new Scene("prison", prisonImage, prisonDesc, prisonOptions);
+
+
 
     /*
     
@@ -48,12 +63,11 @@ function SceneController() {
     
     */
 
-    var scene1Image = "assets/img/PeezyMain.png";
+    var scene1Image = "assets/img/Crystal.jpg";
     var scene1Desc = "Stuff happens, bro.";
-    var scene1Options = [new MenuOption("Talk to yourself", this.scenes['menu']), new MenuOption("Poop", this.scenes['poop']), new MenuOption("Kill", this.scenes['lose'])];
+    var scene1Options = [new MenuOption("Talk to yourself", 'menu'), new MenuOption("Poop", 'poop'), new MenuOption("Kill", 'prison')];
     // This scene is under 'menu' in the dictionary
     this.scenes['scene1'] = new Scene("scene1", scene1Image, scene1Desc, scene1Options);
-
 
 
 }
