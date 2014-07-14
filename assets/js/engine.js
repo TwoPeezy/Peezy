@@ -28,15 +28,14 @@ $(document).ready(function () {
         sceneController.currentScene = nextScene;
 
         // Saving the current scene so that the player can come back to it later.
-        if (typeof sceneController.currentScene.id == "number") {
+        if (typeof nextScene.id == "number") {
             try {
-                localStorage.setItem("savedgame", sceneController.currentScene.id);
+                localStorage.setItem("savedgame", nextScene.id);
             } catch (e) {
                 console.log("Can't save progress" + e.message);
             }
         }
         window.scrollTo(0, 0);
-
     });
 
 
