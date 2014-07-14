@@ -14,6 +14,7 @@ body {
     margin: 1em;
 }
 #scene-description {
+    float: right;
     padding: 1em;
     padding-top: 3em;
     font-family: monospace, serif;
