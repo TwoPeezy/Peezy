@@ -41,14 +41,17 @@ function SceneController() {
 
     /* Use this variable to get or set the scenes in this game */
     this.scenes = [];
+    var sceneData = [];
+    $.getJSON("assets/js/scenes.json", function (jsondata) {
+        $.each(data, function (data) {
+            sceneData['scene' + data.id] = new Scene(data.name, data.description, data.options);
+        });
+    });
+
+
+
     /* This is the current scene the game is on */
     this.currentScene;
-    /*
-    
-            >>> WARNING: SPOILERS <<<
-    All of the scenes that make up the game below.
-    
-    */
 
     /*
     MENU SCENE
@@ -58,30 +61,6 @@ function SceneController() {
     var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Continue", 'scene' + localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
     this.scenes['menu'] = new Scene("menu", menuImage, menuDesc, menuOptions);
-
-    /*
-    PRISON SCENE
-        */
-    this.scenes['prison'] = new Scene("prison", "assets/img/PeezyMain.png", "You are in prison, stupid", [new MenuOption("Die", 'menu')]);
-    sceneID++;
-
-    /*
-    SCENE 1
-        */
-
-    /* The image url */
-    var imageURL = "assets/img/Crystal.jpg";
-
-    /* The description */
-    var description = "Stuff happens, bro.";
-
-    /* Menu options that lead to new scenes */
-    var buttonOptions = [new MenuOption("Talk to yourself", 'menu'), new MenuOption("Poop", 'scene2'), new MenuOption("Kill", 'prison')];
-
-    /* This scene is under 'scene1' in the dictionary */
-    this.scenes['scene' + sceneID] = new Scene("Crystal", imageURL, description, buttonOptions);
-
-    /* Increment the ID so that scenes are in order scene1, scene2, scene3 */
-    sceneID++;
+    console.log(JSON.stringify(this.scenes.scene1));
 
 }
