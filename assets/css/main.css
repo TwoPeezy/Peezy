@@ -4,6 +4,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    float: right;
 }
 #scene {} #scene-image {
     text-align: center;
@@ -14,7 +15,6 @@ body {
     margin: 1em;
 }
 #scene-description {
-    float: right;
     padding: 1em;
     padding-top: 3em;
     font-family: monospace, serif;
