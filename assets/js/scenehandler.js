@@ -45,11 +45,16 @@ function SceneController() {
 
     /* Use this variable to get or set the scenes in this game */
     this.scenes;
-    var scenedata = [];
-    $.getJSON("assets/js/scenes.json", function (data) {
-        scenedata = data;
+    var scenedata = {};
+    $.ajax({
+        url: "scenes.json",
+        dataType: 'json',
+        success: function (data) {
+            scenedata = data;
+        },
+        async: false
     });
-    console.log(JSON.stringify(scenedata.prison));
+    console.log(scenedata['1']);
     this.scenes = scenedata;
 
     /*
