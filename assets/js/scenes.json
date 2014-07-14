@@ -1,0 +1,32 @@
+{
+    1: {
+        id: 1,
+        name: "Crystal",
+        image: "assets/img/Crystal.jpg",
+        description: "Stuff happens, bro.",
+        options: [{
+            text: "Talk to yourself",
+            scene: "menu",
+            id: 0
+            }, {
+            text: "Poop",
+            scene: "2",
+            id: 1
+            }, {
+            text: "Kill",
+            scene: "prison",
+            id: 2
+             }]
+    },
+    prison: {
+        id: "prison",
+        name: "Prison",
+        image: "assets/img/Crystal.jpg",
+        description: "You\"re in prison, stupid!",
+        options: [{
+            text: "Die",
+            scene: "menu",
+            id: 0
+            }]
+    }
+}

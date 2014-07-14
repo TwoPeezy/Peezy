@@ -7,7 +7,7 @@ $(document).ready(function () {
     function init() {
         sceneController = new SceneController();
         var menu = sceneController.scenes.menu;
-        menu.startScene();
+        startScene(menu.name, menu.image, menu.description, menu.options);
         sceneController.currentScene = menu;
     }
     $("#scene-options").on('click', '.option', function () {
@@ -16,7 +16,7 @@ $(document).ready(function () {
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
         console.log(JSON.stringify(nextScene));
 
-        nextScene.startScene();
+        startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
         sceneController.currentScene = nextScene;
 
         // Saving the current scene so that the player can come back to it later.
