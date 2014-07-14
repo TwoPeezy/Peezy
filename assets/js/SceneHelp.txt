@@ -14,4 +14,30 @@ In order to add a Scene, it requires 4 parameters.
 =-  new Scene(name, picture, description, array(MenuOptions))
 ==~
 
+So to setup a scene JSON object in the scenes.json file:
+===
+
+, // <-----  DON'T FORGET COMMAS here if you're appending. The scenes.json in itself is a dictionary.
+"scene number": {
+        
+        "id": idNumber, // same as scene number
+        
+        "name": "Human Readable Title", // Also goes to the right or the window title
+        
+        "image": "assets/img/Crystal.jpg", //URL to an image file
+        
+        "description": " Description that goes to the right or below image ",
+        "options": [{
+            "text": " text that goes on the button ",
+            "scene": " link to another scene (just the id number) ",
+            "id": 0 // manually entering the array indexes of the buttons (confusing, but need it for JQuery). Increment by 1.
+        }, {
+            "text": " another button text ",
+            "scene": " another link to a scene ",
+            "id": 1 // keep incrementing by 1
+        }]
+    } // No comma here if you're at the end of the file
+
+===
+
 For more help, look at scene "1" in scenes.json for an example on how to add one
