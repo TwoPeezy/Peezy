@@ -9,6 +9,11 @@ $(document).ready(function () {
         var menu = sceneController.scenes.menu;
         startScene(menu.name, menu.image, menu.description, menu.options);
         sceneController.currentScene = menu;
+
+        // Change the css of the continue button if there's no saved game
+        if (localStorage.getItem("savedgame") == null) {
+            $("#1").css("display", "none");
+        }
     }
     $("#scene-options").on('click', '.option', function () {
 

@@ -1,11 +1,8 @@
 /*      
  */
-
-var sceneID = 0;
-
 function Scene(name, image, description, options) {
     // Keeping track of scene ID for saving
-    this.id = sceneID;
+    this.id;
     // Name of scene
     this.name = name;
     // Image floated left
@@ -14,11 +11,9 @@ function Scene(name, image, description, options) {
     this.description = description;
     // Array of menu options
     this.options = options;
-    // One a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
-
 }
 /*
-Function that starts a scene
+Once a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
     */
 function startScene(name, image, description, options) {
     $("title").text("Peezy - " + name);
@@ -54,7 +49,7 @@ function SceneController() {
         },
         async: false
     });
-    console.log(scenedata['1']);
+    //    console.log(scenedata['1']);
     this.scenes = scenedata;
 
     /*
@@ -62,9 +57,10 @@ function SceneController() {
         */
     var menuImage = "assets/img/PeezyMain.png";
     var menuDesc = "Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
-    var menuOptions = [new MenuOption("New Game", 'scene1'), new MenuOption("Continue", localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
+    var menuOptions = [new MenuOption("New Game", '1'), new MenuOption("Continue", "" + localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
-    this.scenes['menu'] = new Scene("Noire", menuImage, menuDesc, menuOptions);
+    this.scenes["menu"] = new Scene("Noire", menuImage, menuDesc, menuOptions);
+    this.scenes["menu"].id = "menu";
 
     /* This is the current scene the game is on */
     this.currentScene;
