@@ -59,7 +59,7 @@
         "options": [{
             "text": "Back to menu",
             "scene": "menu",
-            "id": 0;
+            "id": 0
         }]
     }
 }
