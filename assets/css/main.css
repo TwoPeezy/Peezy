@@ -61,3 +61,6 @@ span.option:active {
     border-color: black;
     border-style: solid;
 }
+#search-message {
+    display: none;
+}

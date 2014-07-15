@@ -111,12 +111,12 @@
                 "scene": "scene-textfield",
                 "id": 3
       }
-    ]
-    },
-    "searchables": {
-        "register": "2.4.1",
-        "vault": "2.4.2",
-        "bystander's pant pocket": "2.4.3"
+    ],
+        "searchables": {
+            "register": "2.4.1",
+            "vault": "2.4.2",
+            "bystander's pant pocket": "2.4.3"
+        }
     },
     "2.1.0": {
         "name": "Talk to the teller",

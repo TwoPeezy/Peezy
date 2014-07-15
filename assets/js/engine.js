@@ -28,13 +28,15 @@ $(document).ready(function () {
     $("#scene-options").on('click', '.option', function () {
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
-        console.log(nextScene);
+        console.log(JSON.stringify(nextScene));
 
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
             $("#scene-textfield").toggle();
         } else {
             // Start the next scene
             startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
+
+            // Set the next scene to the one that the option specifies
             sceneController.currentScene = nextScene;
 
             // Saving the current scene so that the player can come back to it later.
