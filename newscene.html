@@ -4,6 +4,7 @@
 <head>
     <title>New Scene</title>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/scenehandler.js"></script>
     <style>
         body {
             font-family: monospace;
@@ -42,11 +43,32 @@
     </style>
     <script type="text/javascript">
         function addOptionField() {
-            $("#options").append("<input class='option' type='text' placeholder='Menu Option'><input class='link' type='text' placeholder='SceneLink'><br />");
+            $("#options").append("<span class='option'><input class='option' type='text' placeholder='Menu Option'><input class='link' type='text' placeholder='SceneLink'></span><br />");
         }
 
         function addSearchableField() {
-            $("#searchables").append("<input class='searchable' type='text' placeholder='Searchable Item'><input class='link' type='text' placeholder='SceneLink'><br />");
+            $("#searchables").append("<span class='searchable'><input class='searchable' type='text' placeholder='Searchable Item'><input class='link' type='text' placeholder='SceneLink'></span><br />");
+        }
+
+        function renderJSON() {
+            var optionCount = 0;
+            var options = [];
+            $("#options span").each(function () {
+                options.push("{'text':" + $("input.option").val() + ", 'scene':" + '' + $("input.link").val().toLowerCase() + ", 'id':" + optionCount + "}")
+            });
+
+            // Now create the sceneObject
+            var sceneObject = new Scene($("#name").val(), $("#image").val(), $("#description").val(), options);
+            optionCount++;
+
+            var searchables = {};
+            sceneObject.id = $("#id").val().toLowerCase();
+            $("#searchable span").each(function () {
+                searchables['' + $("input.searchable").val().toLowerCase()] = $(".link").val().toLowerCase();
+            });
+            sceneObject.searchables = searchables;
+            console.log(JSON.stringify(sceneObject));
+            $("#renderedJSON").html("'" + sceneObject.id.toLowerCase() + "':" + JSON.stringify(sceneObject));
         }
     </script>
 </head>
@@ -56,24 +78,26 @@
     <form>
         <div id="details">
             *
-            <input type="text" placeholder="id">
+            <input id="id" type="text" placeholder="id">
             <br />*
-            <input type="text" placeholder="Name">
+            <input id="name" type="text" placeholder="Name">
             <br />*
-            <textarea placeholder="Description"></textarea>
+            <input id="image" type="text" placeholder="image URL">
+            <br />*
+            <textarea id="description" placeholder="Description"></textarea>
             <h4>* required</h4>
         </div>
         <div id="options">
             <h2>Options</h2>
             *
-            <input class="option" type="text" placeholder="Menu Option">
-            <input class="link" type="text" placeholder="SceneLink">
+            <span class="option"><input class="option" type="text" placeholder="Menu Option">
+            <input class="link" type="text" placeholder="SceneLink"></span>
         </div>
         <input class="button" type="button" onclick="addOptionField()" value="Add option">
         <div id="searchables">
             <h2>Searchables</h2>
-            <input class="searchable" type="text" placeholder="Searchable Item">
-            <input class='link' type='text' placeholder='SceneLink'>
+            <span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item">
+            <input class='link' type='text' placeholder='SceneLink'></span>
             <br />
 
         </div>
@@ -81,10 +105,10 @@
     </form>
     <h2>Render JSON</h2>
     <p>Fill out the desired forms, and then hit the Render JSON button</p>
-    <input class="button" type="button" onclick="renderJSON" value="Render JSON">
+    <input class="button" type="button" onclick="renderJSON()" value="Render JSON">
     <h3>Exported JSON</h3>
     <p>Copy and paste the JSON below into scenes.json. Don't forget the comma first, though.</p>
-    <textarea></textarea>
+    <textarea id="renderedJSON"></textarea>
 </body>
 
 </html>
