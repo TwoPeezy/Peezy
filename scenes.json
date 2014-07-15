@@ -40,7 +40,7 @@
         "id": 2,
         "name": "Crystal",
         "image": "assets/img/Crystal.jpg",
-        "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy'? she asks.",
+        "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy?' she asks.",
         "options": [{
             "text": "'Get to the point.'",
             "scene": "3",
