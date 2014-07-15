@@ -61,7 +61,7 @@ function SceneController() {
     MENU SCENE
         */
     var menuImage = "assets/img/PeezyMain.png";
-    var menuDesc = "The name's Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me. I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.";
+    var menuDesc = "<p>The name's Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me.</p><p> I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.</p>";
     var menuOptions = [new MenuOption("New Game", '1'), new MenuOption("Continue", '' + localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
     // This scene is under 'menu' in the dictionary
     this.scenes["menu"] = new Scene("Noire", menuImage, menuDesc, menuOptions);
