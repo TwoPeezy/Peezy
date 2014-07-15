@@ -3,7 +3,7 @@
         "id": "prison",
         "name": "Prison",
         "image": "http://funnytimes.com/wp-content/uploads/2002/08/200208142.jpg",
-        "description": "Why'd you do that? Look where that got you, stupid.",
+        "description": "Honestly, why'd you do that? There were plenty of other options. Look where that got you, stupid.",
         "options": [{
             "text": "Die and Reincarnate yourself.",
             "scene": "menu",
@@ -43,12 +43,79 @@
         "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy?' she asks.",
         "options": [{
             "text": "'Get to the point.'",
-            "scene": "3",
+            "scene": "1.2.0",
             "id": 0
         }, {
-            "text": "kill",
+            "text": "'Lets go get drinks.'",
+            "scene": "1.2.1",
+            "id": 1
+        }, {
+            "text": "Shoot her.",
             "scene": "prison",
             "id": 1
         }]
+    },
+    "1.2.0": {
+        "id": "1.2.0",
+        "name": "Red Woman",
+        "image": "assets/img/Crystal.jpg",
+        "description": "<p>‘Cut the crap, Peezy. We really don’t have much time. Somebody just robbed the Dark City Bank an hour ago.’ Her eyes flicker about, trying to take in her surroundings. ‘Peezy, let's go.’</p>",
+        "options": [{
+            "text": "'Go with her'",
+            "scene": "2.0.0",
+            "id": 0
+        }, {
+            "text": "Shoot her",
+            "scene": "prison",
+            "id": 1
+        }]
+    },
+    "1.2.1": {
+        "id": "1.2.1",
+        "name": "Crystal is a taken lady",
+        "image": "assets/img/Crystal.jpg",
+        "description": "<p>‘Seriously, Peezy. Let’s get going. We don’t have time for this. Somebody robbed Dark City Bank an hour ago, and the cops haven’t found anything.’</p>",
+        "options": [{
+            "text": "'Alright, you dumb broad. I'll go check the place out",
+            "scene": "2.0.0",
+            "id": 0
+        }, {
+            "text": "Strangle her",
+            "scene": "prison",
+            "id": 1
+        }]
+    },
+    "2.0.0": {
+        "id": "2.0.0",
+        "name": "Dark City Bank",
+        "image": "assets/img/Crystal.jpg",
+        "description": "<p>Dark City Bank. What a shithole. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes.</p>",
+        "options": [
+            {
+                "text": "Talk to the teller",
+                "scene": "2.1.0",
+                "id": 0
+      },
+            {
+                "text": "Talk to a bystander",
+                "scene": "2.2.0",
+                "id": 1
+      },
+            {
+                "text": "Check the security cameras",
+                "scene": "2.3.0",
+                "id": 2
+      },
+            {
+                "text": "Search the premises",
+                "scene": "scene-textfield",
+                "id": 3
+      }
+    ]
+    },
+    "searchables": {
+        "register": "2.4.1",
+        "vault": "2.4.2",
+        "bystander's pant pocket": "2.4.3"
     }
 }

@@ -59,7 +59,7 @@ $(document).ready(function () {
         // If enter key is hit
         if (event.keyCode == 13) {
             if (sceneController.currentScene.searchables != null) {
-                var text = $("#search").val();
+                var text = $("#search").val().toLowerCase;
                 if (sceneController.currentScene.searchables["" + text] != null) {
 
                     var nextScene = sceneController.scenes[sceneController.currentScene.searchables["" + text]];
