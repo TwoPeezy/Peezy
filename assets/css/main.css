@@ -17,12 +17,12 @@ body {
 }
 #scene-description {
     padding: 1em;
-    padding-top: 2em;
+    padding-top: 1em;
     font-family: serif;
     font-size: 1.8em;
 }
 #scene-options {
-    text-align: center;
+    float: right;
     padding: 1.5em;
 }
 #scene-textfield {
