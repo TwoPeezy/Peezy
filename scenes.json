@@ -76,7 +76,7 @@
         "image": "assets/img/1-Peezy's_Office/Crystal.jpg",
         "description": "<p>‘Seriously, Peezy. Let’s get going. We don’t have time for this. Somebody robbed Dark City Bank an hour ago, and the cops haven’t found anything.’</p>",
         "options": [{
-            "text": "'Alright, you dumb broad. I'll go check the place out",
+            "text": "'Alright, you dumb broad. I'll go check the place out.'",
             "scene": "2.0.0",
             "id": 0
         }, {
@@ -117,5 +117,23 @@
         "register": "2.4.1",
         "vault": "2.4.2",
         "bystander's pant pocket": "2.4.3"
-    }
+    },
+    "2.1.0": {
+        "name":"Talk to the teller",
+        "image":"assets/img/2-Dark_City_Bank/2-1-0Teller.png",
+        "description":"‘Hey, you’re Guy Peezy, right? Weren’t you a cop?’ This guy. He is wearing crooked, thin-framed glasses that frame his not-so-thin face. It looks like he hasn’t shaved in a few days, as a thick coat of stubble stampedes across his (one, two, maybe…. three?) chins. I carve my eyes into his, to make him understand what I’m there for.",
+        "options": [{ 
+            "text":"Interrogate with force",
+            "scene":"2.1.1",
+            "id":"0"
+        } , {
+            "text":"Interrogate with words",
+            "scene":"2.1.2",
+            "id":"1"
+        } , {
+            "text":"Slam his face into the desk",
+            "scene":"prison",
+            "id":"2"}
+                   ],
+            "id":"2.1.0","searchables":{"":""}}
 }
