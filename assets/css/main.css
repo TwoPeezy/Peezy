@@ -4,7 +4,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    float: right;
 }
 #scene {
     margin: 1em;
@@ -54,9 +53,9 @@ span.option {
     transition: border .3s ease-in;
     -moz-transition: border .3s ease-in;
     -webkit-transition: border .3s ease-in;
-    transition: color .3s ease-in;
-    -moz-transition: color .3s ease-in;
-    -webkit-transition: color .3s ease-in;
+    transition: color .3s none;
+    -moz-transition: color .3s none;
+    -webkit-transition: color .3s none;
 }
 span.option:hover,
 span.option:active {
