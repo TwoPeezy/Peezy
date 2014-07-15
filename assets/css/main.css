@@ -22,7 +22,6 @@ body {
     font-size: 1.8em;
 }
 #scene-options {
-    float: right;
     padding: 1.5em;
 }
 #scene-textfield {
