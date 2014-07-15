@@ -24,6 +24,7 @@ body {
 }
 #scene-textfield {
     display: none;
+    text-align: center;
 }
 .textfield {
     width: 10em;
@@ -63,4 +64,6 @@ span.option:active {
 }
 #search-message {
     display: none;
+    color: gray;
+    font-size: 1.5em;
 }

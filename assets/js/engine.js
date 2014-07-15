@@ -61,13 +61,17 @@ $(document).ready(function () {
         // If enter key is hit
         if (event.keyCode == 13) {
             if (sceneController.currentScene.searchables != null) {
-                var text = $("#search").val().toLowerCase;
+                var text = $("#search").val().toLowerCase();
+                console.log("Entered text: " + text);
+                console.log("Searchables:" + JSON.stringify(sceneController.currentScene.searchables));
                 if (sceneController.currentScene.searchables["" + text] != null) {
-
+                    $("#search-message").css("display", "none");
                     var nextScene = sceneController.scenes[sceneController.currentScene.searchables["" + text]];
                     startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
                     sceneController.currentScene = nextScene;
                     $("#scene-textfield").toggle();
+                } else {
+                    $("#search-message").css("display", "inline");
                 }
             }
         }
