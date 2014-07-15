@@ -9,7 +9,8 @@
         body {
             font-family: helvetica, sans-serif, serif;
             font-size: 1.2em;
-            text-align: center;
+            text-align: left;
+            margin-left: 10%;
             background: rgba(150, 150, 140, 0.2);
         }
         img {
@@ -20,8 +21,8 @@
         }
         input,
         textarea {
+            font-family: monospace;
             padding: 0.4em;
-            width: 10em;
             background: rgba(0, 0, 0, .05);
             border: none;
             outline: none;
@@ -49,6 +50,13 @@
         input.link,
         textarea {
             display: inline-block;
+        }
+        textarea {
+            width: 30em;
+        }
+        #renderedJSON {
+            color: blue;
+            height: 10em;
         }
     </style>
     <script type="text/javascript">
@@ -89,8 +97,13 @@
             }
             console.log(JSON.stringify(sceneObject));
 
-            // Final rendering
-            $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
+            // Final rendering if all data is there
+            if (sceneObject.id != "" && sceneObject.name != "" && sceneObject.image != "" && sceneObject.description != "" && sceneObject.options != "") {
+                $("#warning").hide();
+                $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
+            } else {
+                $("#warning").show();
+            }
         }
         $(document).ready(function () {
             $(document).keydown(function (e) {
@@ -141,14 +154,20 @@
         </div>
         <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
     </form>
-    <h2>Reference</h2>
-    <img src="assets/img/0-Menus/newscenehelp.png">
-    <h2>Render JSON</h2>
-    <p>Fill out the desired forms, and then hit the button</p>
-    <input class="button" type="button" onclick="renderJSON()" value="Render JSON">
-    <p>Copy and paste the JSON below into scenes.json. Don't forget the comma first, though.</p>
-    <br />
-    <textarea id="renderedJSON"></textarea>
+
+    <div id="JSONExport">
+        <h2>Render JSON</h2>
+        <p>Fill out the desired forms, and then hit the button</p>
+        <input class="button" type="button" onclick="renderJSON()" value="Render JSON">
+        <p>Copy and paste the JSON below into scenes.json. Don't forget the comma first, though.</p>
+        <textarea id="renderedJSON"></textarea>
+        <p id="warning" style='display: none;color:red;'><strong>Make sure you've filled out all the required fields.</strong>
+        </p>
+    </div>
+    <div>
+        <h2>Reference</h2>
+        <img src="assets/img/0-Menus/newscenehelp.png">
+    </div>
 </body>
 
 </html>
