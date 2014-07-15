@@ -28,16 +28,13 @@
         "description": "<p>A woman - I figure - clamures her way through my office door. 'What a way to enter', I mumble.</p><p> She's pretty though.</p><p> Her red dress caressing her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
-            "scene": "scene-textfield",
+            "scene": "2",
             "id": 0
         }, {
             "text": "kill",
             "scene": "prison",
             "id": 1
-        }],
-        "searchables": {
-            "chest": "menu"
-        }
+        }]
     },
     "2": {
         "id": 2,
