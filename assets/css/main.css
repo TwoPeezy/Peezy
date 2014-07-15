@@ -51,12 +51,12 @@ span.option {
     padding: .5em;
     margin: 0.4em;
     border: 2px solid lightgray;
-    transition: border .3s none;
-    -moz-transition: border .3s none;
-    -webkit-transition: border .3s none;
-    transition: color .3s none;
-    -moz-transition: color .3s none;
-    -webkit-transition: color .3s none;
+    transition: border .3s ease-in;
+    -moz-transition: border .3s ease-in;
+    -webkit-transition: border .3s ease-in;
+    transition: color .3s ease-in;
+    -moz-transition: color .3s ease-in;
+    -webkit-transition: color .3s ease-in;
 }
 span.option:hover,
 span.option:active {
