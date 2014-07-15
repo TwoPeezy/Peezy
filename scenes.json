@@ -25,7 +25,7 @@
         "id": 1,
         "name": "Red Woman",
         "image": "assets/img/Crystal.jpg",
-        "description": "<p>A knock on my door. The sound resounds through my office, before a woman in red throws it open. 'What a way to enter', I mumble.</p><p> She's pretty though, her eyes like emeralds and her body cut finer than a diamond.Her dress caressed her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
+        "description": "<p>A knock on my door. The sound resounds through my office, before a woman in red throws it open. 'What a way to enter', I mumble.</p><p> She's pretty though, her eyes like emeralds and her body cut finer than a diamond. Her dress caresses her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
             "scene": "2",
