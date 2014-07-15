@@ -9,6 +9,8 @@ function Scene(name, image, description, options) {
     this.description = description;
     // Array of menu options
     this.options = options;
+    // Searchable items for a scene
+    this.searchables;
 }
 /*
 Once a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
@@ -32,6 +34,11 @@ function MenuOption(text, scene) {
     this.id;
     this.text = text;
     this.scene = scene;
+}
+
+function Searchable(name, link) {
+    this.name = name;
+    this.link = link;
 }
 
 function SceneController() {
