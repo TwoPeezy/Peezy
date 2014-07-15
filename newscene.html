@@ -8,6 +8,7 @@
     <style>
         body {
             font-family: monospace;
+            font-size: 1.2em;
             text-align: center;
         }
         div {
@@ -43,31 +44,41 @@
     </style>
     <script type="text/javascript">
         function addOptionField() {
-            $("#options").append("<span class='option'><input class='option' type='text' placeholder='Menu Option'><input class='link' type='text' placeholder='SceneLink'></span><br />");
+            $("#options").append('<span class="option"><input class="option" type="text" placeholder="Menu Option"><input class="link" type="text" placeholder="SceneLink"></span><br />');
         }
 
         function addSearchableField() {
-            $("#searchables").append("<span class='searchable'><input class='searchable' type='text' placeholder='Searchable Item'><input class='link' type='text' placeholder='SceneLink'></span><br />");
+            $("#searchables").append('<span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item"><input class="link" type="text" placeholder="SceneLink"></span><br />');
         }
 
         function renderJSON() {
             var optionCount = 0;
             var options = [];
             $("#options span").each(function () {
-                options.push("{'text':" + $("input.option").val() + ", 'scene':" + '' + $("input.link").val().toLowerCase() + ", 'id':" + optionCount + "}")
+                options.push({
+                    "text": "" + $(this).find("input.option").val(),
+                    "scene": "" + $(this).find("input.link").val().toLowerCase(),
+                    "id": "" + optionCount
+                });
+
+                optionCount++;
             });
 
             // Now create the sceneObject
             var sceneObject = new Scene($("#name").val(), $("#image").val(), $("#description").val(), options);
-            optionCount++;
 
-            var searchables = {};
+            // Set scene id
             sceneObject.id = $("#id").val().toLowerCase();
-            $("#searchable span").each(function () {
-                searchables['' + $("input.searchable").val().toLowerCase()] = $(".link").val().toLowerCase();
+
+            // Find searchables
+            var searchables = {};
+            $("#searchables span").each(function () {
+                searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
             });
             sceneObject.searchables = searchables;
             console.log(JSON.stringify(sceneObject));
+
+            // Final rendering
             $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
         }
     </script>
@@ -87,6 +98,7 @@
             <textarea id="description" placeholder="Description"></textarea>
             <h4>* required</h4>
         </div>
+        <!-- OPTIONS -->
         <div id="options">
             <h2>Options</h2>
             *
@@ -95,12 +107,13 @@
             <br />
         </div>
         <input class="button" type="button" onclick="addOptionField()" value="Add option">
+
+        <!-- SEARCHABLES -->
         <div id="searchables">
             <h2>Searchables</h2>
             <span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item">
             <input class='link' type='text' placeholder='SceneLink'></span>
             <br />
-
         </div>
         <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
     </form>
