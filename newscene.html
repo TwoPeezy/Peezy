@@ -12,6 +12,9 @@
             text-align: center;
             background: rgba(150, 150, 140, 0.2);
         }
+        img {
+            width: 30em;
+        }
         div {
             margin: 1em;
         }
@@ -30,14 +33,12 @@
         }
         input.button {
             background: lightgray;
-            border-style: solid;
+            border-style: outset;
             border-width: 1px;
-            border-color: black;
         }
         input.button:active {
             outline: none;
-            color: white;
-            background-color: gray;
+            border-style: inset;
             outline: none;
         }
         input.button:focus {
@@ -125,11 +126,14 @@
         </div>
         <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
     </form>
+    <h2>Reference</h2>
+    <img src="assets/img/0-Menus/newscenehelp.png">
     <h2>Render JSON</h2>
     <p>Fill out the desired forms, and then hit the Render JSON button</p>
     <input class="button" type="button" onclick="renderJSON()" value="Render JSON">
-    <h3>Exported JSON</h3>
+    <h2>Exported JSON</h2>
     <p>Copy and paste the JSON below into scenes.json. Don't forget the comma first, though.</p>
+    <br />
     <textarea id="renderedJSON"></textarea>
 </body>
 
