@@ -54,10 +54,17 @@ $(document).ready(function () {
     Textfield handler
         */
     $(".textfield").keydown(function (event) {
+        // If enter key is hit
         if (event.keyCode == 13) {
-
             if (sceneController.currentScene.searchables != null) {
                 var text = $("#search").val();
+                if (sceneController.currentScene.searchables["" + text] != null) {
+
+                    var nextScene = sceneController.scenes[sceneController.currentScene.searchables["" + text]];
+                    startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
+                    sceneController.currentScene = nextScene;
+                    $("#scene-textfield").toggle();
+                }
             }
         }
     });
@@ -68,8 +75,6 @@ $(document).ready(function () {
     function checkScreenSize() {
         if ((window.innerWidth / window.innerHeight) < 4 / 3) {
             $("#scene-image").css("float", "none");
-            $(".textfield").css("margin-left", "0");
-            $("#scene-textfield").css("text-align", "center");
         }
     }
     /*
@@ -77,8 +82,6 @@ $(document).ready(function () {
         */
     $(window).resize(function () {
         $("#scene-image").css("float", "left");
-        $(".textfield").css("margin-left", "10em");
-        $("#scene-textfield").css("text-align", "left");
         checkScreenSize();
     });
 });

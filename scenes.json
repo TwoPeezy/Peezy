@@ -28,13 +28,16 @@
         "description": "<p>A woman - I figure - clamures her way through my office door. 'What a way to enter', I mumble.</p><p> She's pretty though.</p><p> Her red dress caressing her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
-            "scene": "2",
+            "scene": "scene-textfield",
             "id": 0
         }, {
             "text": "kill",
             "scene": "prison",
             "id": 1
-        }]
+        }],
+        "searchables": {
+            "chest": "menu"
+        }
     },
     "2": {
         "id": 2,
@@ -49,17 +52,6 @@
             "text": "kill",
             "scene": "prison",
             "id": 1
-        }]
-    },
-    "about": {
-        "id": "about",
-        "name": "Fine Details",
-        "image": "http://www.gmoabugampaha.org/wp-content/uploads/2014/02/About.jpg",
-        "description": "We're just some dudes that wanted to make the dumbest game possible, while having the time of our life learning and writing witty banter. We aren't actually racist.",
-        "options": [{
-            "text": "Back to menu",
-            "scene": "menu",
-            "id": 0
         }]
     }
 }

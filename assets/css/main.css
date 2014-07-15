@@ -10,7 +10,6 @@ body {
 }
 #scene-image {
     float: left;
-    z-index: 0;
     height: 15em;
     width: 15em;
     margin-bottom: 0;
@@ -29,7 +28,7 @@ body {
 .textfield {
     width: 10em;
     display: inline;
-    margin-left: 10em;
+    margin-left: 1.5em;
     color: lightgray;
     font-size: 1.5em;
     border-style: solid;
