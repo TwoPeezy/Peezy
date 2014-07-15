@@ -7,48 +7,56 @@
     <script type="text/javascript" src="assets/js/scenehandler.js"></script>
     <style>
         body {
-            font-family: monospace;
+            font-family: helvetica, sans-serif, serif;
             font-size: 1.2em;
             text-align: center;
+            background: rgba(150, 150, 140, 0.2);
         }
         div {
             margin: 1em;
         }
-        input {
+        input,
+        textarea {
             width: 10em;
-            color: black;
             font-size: 1em;
-            border-style: solid;
-            border-width: 0 0 1px 0;
-            border-color: black;
+            background: rgba(0, 0, 0, .05);
+            border: none;
+            outline: none;
+            font-size: 1em;
+        }
+        input:focus,
+        textarea:focus {
+            background: rgba(255, 255, 255, .5);
         }
         input.button {
             background: lightgray;
             border-style: solid;
             border-width: 1px;
             border-color: black;
-            margin: 1.5em;
         }
-        input:focus {
+        input.button:active {
             outline: none;
-            color: black;
+            color: white;
+            background-color: gray;
+            outline: none;
+        }
+        input.button:focus {
+            outline: none;
         }
         input.option,
         input.searchable,
-        input.link {
-            display: inline-block;
-        }
+        input.link,
         textarea {
-            font-size: 1em;
+            display: inline-block;
         }
     </style>
     <script type="text/javascript">
         function addOptionField() {
-            $("#options").append('<span class="option"><input class="option" type="text" placeholder="Menu Option"><input class="link" type="text" placeholder="SceneLink"></span><br />');
+            $("#options").append('<span class="option"><input class="option" type="text" placeholder="Menu Option"> <input class="link" type="text" placeholder="SceneLink"></span><br />');
         }
 
         function addSearchableField() {
-            $("#searchables").append('<span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item"><input class="link" type="text" placeholder="SceneLink"></span><br />');
+            $("#searchables").append('<span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item"> <input class="link" type="text" placeholder="SceneLink"></span><br />');
         }
 
         function renderJSON() {
@@ -87,6 +95,7 @@
 <body>
     <h2>New Scene JSON Exporter</h2>
     <form>
+        <h4>* required</h4>
         <div id="details">
             *
             <input id="id" type="text" placeholder="id">
@@ -96,7 +105,6 @@
             <input id="image" type="text" placeholder="image URL">
             <br />*
             <textarea id="description" placeholder="Description"></textarea>
-            <h4>* required</h4>
         </div>
         <!-- OPTIONS -->
         <div id="options">
