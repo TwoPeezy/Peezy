@@ -24,7 +24,7 @@
     "1.0.0": {
         "id": "1.0.0",
         "name": "Red Woman",
-        "image": "assets/img/Crystal.jpg",
+        "image": "assets/img/1-Peezy's_Office/Crystal.jpg",
         "description": "<p>A knock on my door. The sound resounds through my office, before a woman in red throws it open. 'What a way to enter', I mumble.</p><p> She's pretty though, her eyes like emeralds and her body cut finer than a diamond. Her dress caresses her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
@@ -39,8 +39,8 @@
     "1.1.0": {
         "id": "1.1.0",
         "name": "Crystal",
-        "image": "assets/img/Crystal.jpg",
-        "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy?' she asks.",
+        "image": "assets/img/1-Peezy's_Office/Crystal.jpg",
+        "description": "<p>A gale force wind blows the door wide with her brisk entrance. She shuts it leisurely, the cold apparently not fazing her. She turns, and smiles at my cheekily.</p> <p>‘What do you need?’ I ask sternly, diverting the mood. She walks quickly toward me.</p> <p>‘The name’s Crystal. You busy?’ she asks. Her voice is smooth, like silk, and her mouth tries to whisper her words seductively. It doesn’t seem like she’s trying to do this, but regardless, I felt my package stiffen.</p>",
         "options": [{
             "text": "'Get to the point.'",
             "scene": "1.2.0",
@@ -58,7 +58,7 @@
     "1.2.0": {
         "id": "1.2.0",
         "name": "Red Woman",
-        "image": "assets/img/Crystal.jpg",
+        "image": "assets/img/1-Peezy's_Office/Crystal.jpg",
         "description": "<p>‘Cut the crap, Peezy. We really don’t have much time. Somebody just robbed the Dark City Bank an hour ago.’ Her eyes flicker about, trying to take in her surroundings. ‘Peezy, let's go.’</p>",
         "options": [{
             "text": "'Go with her'",
@@ -73,7 +73,7 @@
     "1.2.1": {
         "id": "1.2.1",
         "name": "Crystal is a taken lady",
-        "image": "assets/img/Crystal.jpg",
+        "image": "assets/img/1-Peezy's_Office/Crystal.jpg",
         "description": "<p>‘Seriously, Peezy. Let’s get going. We don’t have time for this. Somebody robbed Dark City Bank an hour ago, and the cops haven’t found anything.’</p>",
         "options": [{
             "text": "'Alright, you dumb broad. I'll go check the place out",
@@ -88,7 +88,7 @@
     "2.0.0": {
         "id": "2.0.0",
         "name": "Dark City Bank",
-        "image": "assets/img/2-0-0DarkCityBank.jpg",
+        "image": "assets/img/2-Dark_City_Bank/2-0-0DarkCityBank.png",
         "description": "<p>Dark City Bank. What a shithole. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes.</p>",
         "options": [
             {
