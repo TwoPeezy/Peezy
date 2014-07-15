@@ -22,7 +22,6 @@
         textarea {
             padding: 0.4em;
             width: 10em;
-            font-size: 1em;
             background: rgba(0, 0, 0, .05);
             border: none;
             outline: none;
@@ -54,11 +53,11 @@
     </style>
     <script type="text/javascript">
         function addOptionField() {
-            $("#options").append('<span class="option"><input class="option" type="text" placeholder="Menu Option"> <input class="link" type="text" placeholder="SceneLink"></span><br />');
+            $("#options").append('<span class="option"><input class="option" type="text" placeholder="Menu Option"> <input class="link" type="text" placeholder="Link to"></span><br />');
         }
 
         function addSearchableField() {
-            $("#searchables").append('<span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item"> <input class="link" type="text" placeholder="SceneLink"></span><br />');
+            $("#searchables").append('<span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item"> <input class="link" type="text" placeholder="Link to"></span><br />');
         }
 
         function renderJSON() {
@@ -93,6 +92,19 @@
             // Final rendering
             $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
         }
+        $(document).ready(function () {
+            $(document).keydown(function (e) {
+                // If tab, then append a new element
+                if (e.keyCode == 9) {
+                    if ($("#options .link").is(":focus")) {
+                        addOptionField();
+                    }
+                    if ($("#searchables .link").is(":focus")) {
+                        addSearchableField();
+                    }
+                }
+            });
+        });
     </script>
 </head>
 
@@ -115,7 +127,7 @@
             <h2>Options</h2>
             *
             <span class="option"><input class="option" type="text" placeholder="Menu Option">
-            <input class="link" type="text" placeholder="SceneLink"></span>
+            <input class="link" type="text" placeholder="Link to"></span>
             <br />
         </div>
         <input class="button" type="button" onclick="addOptionField()" value="Add option">
@@ -124,7 +136,7 @@
         <div id="searchables">
             <h2>Searchables</h2>
             <span class="searchable"><input class="searchable" type="text" placeholder="Searchable Item">
-            <input class='link' type='text' placeholder='SceneLink'></span>
+            <input class='link' type='text' placeholder='Link to'></span>
             <br />
         </div>
         <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
@@ -132,9 +144,8 @@
     <h2>Reference</h2>
     <img src="assets/img/0-Menus/newscenehelp.png">
     <h2>Render JSON</h2>
-    <p>Fill out the desired forms, and then hit the Render JSON button</p>
+    <p>Fill out the desired forms, and then hit the button</p>
     <input class="button" type="button" onclick="renderJSON()" value="Render JSON">
-    <h2>Exported JSON</h2>
     <p>Copy and paste the JSON below into scenes.json. Don't forget the comma first, though.</p>
     <br />
     <textarea id="renderedJSON"></textarea>
