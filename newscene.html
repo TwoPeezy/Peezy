@@ -20,6 +20,7 @@
         }
         input,
         textarea {
+            padding: 0.4em;
             width: 10em;
             font-size: 1em;
             background: rgba(0, 0, 0, .05);
@@ -80,11 +81,13 @@
             sceneObject.id = $("#id").val().toLowerCase();
 
             // Find searchables
-            var searchables = {};
-            $("#searchables span").each(function () {
-                searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
-            });
-            sceneObject.searchables = searchables;
+            if ($("#searchables input.searchable").val() != null) {
+                var searchables = {};
+                $("#searchables span").each(function () {
+                    searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
+                });
+                sceneObject.searchables = searchables;
+            }
             console.log(JSON.stringify(sceneObject));
 
             // Final rendering
