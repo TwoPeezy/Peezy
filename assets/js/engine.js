@@ -29,6 +29,7 @@ $(document).ready(function () {
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
         console.log(nextScene);
+
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
             $("#scene-textfield").toggle();
         } else {
@@ -37,7 +38,8 @@ $(document).ready(function () {
             sceneController.currentScene = nextScene;
 
             // Saving the current scene so that the player can come back to it later.
-            if (typeof nextScene.id == "number") {
+            // Also making sure it doesn't save state as a menu
+            if ((nextScene.id != "menu") && (nextScene.id != "prison") && (nextScene.id != "about")) {
                 try {
                     localStorage.setItem("savedgame", nextScene.id);
                 } catch (e) {

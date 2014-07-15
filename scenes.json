@@ -21,14 +21,14 @@
             "id": 0
         }]
     },
-    "1": {
-        "id": 1,
+    "1.0.0": {
+        "id": "1.0.0",
         "name": "Red Woman",
         "image": "assets/img/Crystal.jpg",
         "description": "<p>A knock on my door. The sound resounds through my office, before a woman in red throws it open. 'What a way to enter', I mumble.</p><p> She's pretty though, her eyes like emeralds and her body cut finer than a diamond. Her dress caresses her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
-            "scene": "2",
+            "scene": "1.1.0",
             "id": 0
         }, {
             "text": "kill",
@@ -36,8 +36,8 @@
             "id": 1
         }]
     },
-    "2": {
-        "id": 2,
+    "1.1.0": {
+        "id": "1.1.0",
         "name": "Crystal",
         "image": "assets/img/Crystal.jpg",
         "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy?' she asks.",
