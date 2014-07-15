@@ -25,7 +25,7 @@
         "id": 1,
         "name": "Red Woman",
         "image": "assets/img/Crystal.jpg",
-        "description": "<p>A woman - I figure - clamures her way through my office door. 'What a way to enter', I mumble.</p><p> She's pretty though.</p><p> Her red dress caressing her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
+        "description": "<p>A knock on my door. The sound resounds through my office, before a woman in red throws it open. 'What a way to enter', I mumble.</p><p> She's pretty though, her eyes like emeralds and her body cut finer than a diamond. Her dress caresses her curves like shrink wrap. <i>I wonder what she wants.</i></p>",
         "options": [{
             "text": "'Who are you?'",
             "scene": "2",
@@ -40,9 +40,9 @@
         "id": 2,
         "name": "Crystal",
         "image": "assets/img/Crystal.jpg",
-        "description": "<p>A breeze soared with her brisk entrance. 'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy'? She asks, 'Because I have the case that throw you into the Big Leagues'.",
+        "description": "<p>A galeforce wind blows the door wide with her brisk entrance. She shuts it quickly, the cold apparently not fazing her. She turned, and smiled at me cheekily.</p> <p>'What do you need?' I ask sternly, diverting the mood.</p> She walks quickly toward me. 'You busy?' she asks.",
         "options": [{
-            "text": "'What is it?'",
+            "text": "'Get to the point.'",
             "scene": "3",
             "id": 0
         }, {
