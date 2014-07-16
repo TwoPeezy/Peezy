@@ -26,6 +26,7 @@ $(document).ready(function () {
     Click Handler
         */
     $("#scene-options").on('click', '.option', function () {
+
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
@@ -36,20 +37,44 @@ $(document).ready(function () {
             if ((nextScene.id != "menu") && (nextScene.id != "prison") && (nextScene.id != "about")) {
 
                 // If the next scene has a lower ID value than the current scene, the player must be going backwards.
-                if ((nextScene.id.split(".")[2]) < (sceneController.currentScene.id.split(".")[2])) {
+                console.log((nextScene.id.split(".")[1]));
+                console.log((sceneController.currentScene.id.split(".")[1]));
+                if ((nextScene.id.split(".")[1]) > (sceneController.currentScene.id.split(".")[1]) || (sceneController.currentScene.id.split(".")[1]) == undefined) {
+
+                    try {
+                        // Try to save the game
+                        localStorage.setItem("savedgame", nextScene.id);
+                    } catch (e) {
+                        console.log("Can't save progress\n" + e.message);
+                    }
+
+
+                    try {
+                        // Try to save the note from the scene
+                        var journalNotes = JSON.parse(localStorage.getItem("notes"));
+                        // Get current note
+                        var note = sceneController.currentScene.note;
+                        // Create a new array if it's null
+                        if (journalNotes == null)
+                            journalNotes = [];
+                        if (journalNotes.indexOf(note) == -1) {
+                            journalNotes.push(note);
+                            localStorage.setItem("notes", JSON.stringify(journalNotes));
+                        }
+                    } catch (e) {
+                        console.log("Can't save note\n" + e.message);
+                    }
+                } // We're going background, so lets remove the option we've traversed 
+                else {
                     // Remove the option for the current scene just went through
                     //Before
-                    console.log(JSON.stringify(sceneController.scenes['' + nextScene.id].options));
-                    sceneController.scenes['' + nextScene.id].options.remove(this.id);
+                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+                    sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
                     //After remove
                     console.log(JSON.stringify(sceneController.scenes['' + nextScene.id].options));
                 }
-                // Try to save the game
-                try {
-                    localStorage.setItem("savedgame", nextScene.id);
-                } catch (e) {
-                    console.log("Can't save progress" + e.message);
-                }
+
+                console.log(localStorage.getItem("notes"));
             }
             // Start the next scene
             startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);

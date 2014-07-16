@@ -11,6 +11,8 @@ function Scene(name, image, description, options) {
     this.options = options;
     // Searchable items for a scene
     this.searchables;
+    // Journal note
+    this.note;
 }
 /*
 Once a Scene is created, all you have to do is call startScene and the scene will replace the HTML elements with the scene
@@ -66,6 +68,7 @@ function SceneController() {
     // This scene is under 'menu' in the dictionary
     this.scenes["menu"] = new Scene("Noire", menuImage, menuDesc, menuOptions);
     this.scenes["menu"].id = "menu";
+    this.scenes["menu"].note = "Yay! Past the main menu. I've got the hang of this.";
 
     /* This is the current scene the game is on */
     this.currentScene;
