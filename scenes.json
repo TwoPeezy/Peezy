@@ -2,7 +2,7 @@
     "prison": {
         "id": "prison",
         "name": "Prison",
-        "image": "http://funnytimes.com/wp-content/uploads/2002/08/200208142.jpg",
+        "image": "assets/img/0-Menus/prison.png",
         "description": "Honestly, why'd you do that? There were plenty of other options. Look where that got you, stupid.",
         "options": [{
             "text": "Die and Reincarnate yourself.",
@@ -13,7 +13,7 @@
     "about": {
         "id": "about",
         "name": "Fine details",
-        "image": "https://c1.staticflickr.com/3/2896/14260473090_5d5ed7d089_z.jpg",
+        "image": "assets/img/0-Menus/us.png",
         "description": "We're a little in love with stupidity. We also needed a place to channel that stupidity, and also a playground to test our wits and writing skills. Thus Peezy - Noire was born.",
         "options": [{
             "text": "Back to menu",

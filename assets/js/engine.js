@@ -28,24 +28,24 @@ $(document).ready(function () {
     $("#scene-options").on('click', '.option', function () {
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
-        console.log(JSON.stringify(nextScene));
+        //        console.log(JSON.stringify(nextScene));
 
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
             $("#scene-textfield").toggle();
         } else {
-            // Start the next scene
-            startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
-
             // Saving the current scene so that the player can come back to it later.
             // Also making sure it doesn't save state as a menu
             if ((nextScene.id != "menu") && (nextScene.id != "prison") && (nextScene.id != "about")) {
 
                 // If the next scene has a lower ID value than the current scene, the player must be going backwards.
-                if (nextScene.id.numberValue < sceneController.currentScene.id.numberValue)
-                // Remove the option for the current scene just went through
-                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
-                sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
-
+                if ((nextScene.id.split(".")[2]) < (sceneController.currentScene.id.split(".")[2])) {
+                    // Remove the option for the current scene just went through
+                    //Before
+                    console.log(JSON.stringify(sceneController.scenes['' + nextScene.id].options));
+                    sceneController.scenes['' + nextScene.id].options.remove(this.id);
+                    //After remove
+                    console.log(JSON.stringify(sceneController.scenes['' + nextScene.id].options));
+                }
                 // Try to save the game
                 try {
                     localStorage.setItem("savedgame", nextScene.id);
@@ -53,6 +53,8 @@ $(document).ready(function () {
                     console.log("Can't save progress" + e.message);
                 }
             }
+            // Start the next scene
+            startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
 
             // Set the next scene
             sceneController.currentScene = nextScene;

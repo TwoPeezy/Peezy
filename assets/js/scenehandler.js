@@ -70,6 +70,4 @@ function SceneController() {
     /* This is the current scene the game is on */
     this.currentScene;
 
-    console.log(JSON.stringify(this.scenes));
-
 }
