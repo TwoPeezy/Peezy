@@ -45,6 +45,9 @@
         input.button:focus {
             outline: none;
         }
+        .required {
+            background: rgba(255, 0, 0, 0.2);
+        }
         input.option,
         input.searchable,
         input.link,
@@ -100,9 +103,15 @@
             // Final rendering if all data is there
             if (sceneObject.id != "" && sceneObject.name != "" && sceneObject.image != "" && sceneObject.description != "" && sceneObject.options != "") {
                 $("#warning").hide();
+                $("#details input").removeClass("required");
+                $("#details textarea").removeClass("required");
+                $("#options span input").removeClass("required");
                 $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
             } else {
                 $("#warning").show();
+                $("#details input").addClass("required");
+                $("#details textarea").addClass("required");
+                $("#options span input").addClass("required");
             }
         }
         $(document).ready(function () {
