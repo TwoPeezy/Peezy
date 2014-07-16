@@ -28,8 +28,6 @@ $(document).ready(function () {
     $("#scene-options").on('click', '.option', function () {
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
-        //        console.log(JSON.stringify(nextScene));
-
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
             $("#scene-textfield").toggle();
         } else {

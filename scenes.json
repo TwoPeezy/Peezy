@@ -141,7 +141,7 @@
     "2.1.1": {
         "name": "Interrogate with Force",
         "image": "assets/img/2-Dark_City_Bank/2-1-1TellerViolence.png",
-        "description": "I reach across the desk and grab a fistful of his collar. I pull his face close to mine, and snarl. ‘What do you know? Who robbed this place? There was an inside man, wasn’t there?!’\n‘Jeezus, man! I don’t know!’",
+        "description": "I reach across the desk and grab a fistful of his collar. I pull his face close to mine, and snarl. ‘What do you know? Who robbed this place? There was an inside man, wasn’t there?!’\n<p>‘Jeezus, man! I don’t know!’</p>",
         "options": [{
             "text": "Interrogate with Words",
             "scene": "2.1.3",
