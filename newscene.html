@@ -75,8 +75,8 @@
             var optionCount = 0;
             var options = [];
             $("#options span").each(function () {
-                    // making sure that it's not pushing empty menu options
-                    if $(this).find("input.option").val() != "") {
+                // making sure that it's not pushing empty menu options
+                if ($(this).find("input.option").val() != "") {
                     options.push({
                         "text": "" + $(this).find("input.option").val(),
                         "scene": "" + $(this).find("input.link").val().toLowerCase(),
@@ -87,35 +87,35 @@
                 }
             });
 
-         // Now create the sceneObject
-        var sceneObject = new Scene($("#name").val(), $("#image").val(), $("#description").val(), options);
+            // Now create the sceneObject
+            var sceneObject = new Scene($("#name").val(), $("#image").val(), $("#description").val(), options);
 
-         // Set scene id
-        sceneObject.id = $("#id").val().toLowerCase();
+            // Set scene id
+            sceneObject.id = $("#id").val().toLowerCase();
 
-         // Find searchables
-        if ($("#searchables input.searchable").val() != "") {
-            var searchables = {};
-            $("#searchables span").each(function () {
-                searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
-            });
-            sceneObject.searchables = searchables;
-        }
-        console.log(JSON.stringify(sceneObject));
+            // Find searchables
+            if ($("#searchables input.searchable").val() != "") {
+                var searchables = {};
+                $("#searchables span").each(function () {
+                    searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
+                });
+                sceneObject.searchables = searchables;
+            }
+            console.log(JSON.stringify(sceneObject));
 
-         // Final rendering if all data is there
-        if (sceneObject.id != "" && sceneObject.name != "" && sceneObject.image != "" && sceneObject.description != "" && sceneObject.options != "") {
-            $("#warning").hide();
-            $("#details input").removeClass("required");
-            $("#details textarea").removeClass("required");
-            $("#options span input").removeClass("required");
-            $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
-        } else {
-            $("#warning").show();
-            $("#details input").addClass("required");
-            $("#details textarea").addClass("required");
-            $("#options span input").addClass("required");
-        }
+            // Final rendering if all data is there
+            if (sceneObject.id != "" && sceneObject.name != "" && sceneObject.image != "" && sceneObject.description != "" && sceneObject.options != "") {
+                $("#warning").hide();
+                $("#details input").removeClass("required");
+                $("#details textarea").removeClass("required");
+                $("#options span input").removeClass("required");
+                $("#renderedJSON").html('"' + sceneObject.id.toLowerCase() + '":' + JSON.stringify(sceneObject));
+            } else {
+                $("#warning").show();
+                $("#details input").addClass("required");
+                $("#details textarea").addClass("required");
+                $("#options span input").addClass("required");
+            }
         }
         $(document).ready(function () {
             $(document).keydown(function (e) {
