@@ -117,7 +117,8 @@
             "register": "2.4.1",
             "vault": "2.4.2",
             "bystander's pant pocket": "2.4.3"
-        }
+        },
+        "note": "Dark City Bank is uglier than I remember. I wonder how they haven't gone bankrupt. <i>Wait, is that even possible</i>?"
     },
     "2.1.0": {
         "name": "Talk to the teller",
@@ -167,7 +168,8 @@
             "scene": "prison",
             "id": "1"
         }],
-        "id": "2.1.2"
+        "id": "2.1.2",
+        "note": "Smelly teller with an unhealthy bean addiction has nothing to say."
     },
     "2.1.3": {
         "name": "Interrogate with words",
@@ -197,6 +199,7 @@
             "scene": "prison",
             "id": "1"
         }],
-        "id": "2.1.4"
+        "id": "2.1.4",
+        "note": "Smelly teller with an unhealthy bean addiction has nothing to say."
     }
 }
