@@ -91,7 +91,7 @@
             sceneObject.id = $("#id").val().toLowerCase();
 
             // Find searchables
-            if ($("#searchables input.searchable").val() != null) {
+            if ($("#searchables input.searchable").val() != "") {
                 var searchables = {};
                 $("#searchables span").each(function () {
                     searchables["" + $(this).find("input.searchable").val().toLowerCase()] = "" + $(this).find("input.link").val().toLowerCase();
