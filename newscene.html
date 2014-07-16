@@ -17,7 +17,7 @@
             width: 30em;
         }
         div {
-            margin: 1em;
+            margin: 1em 0 1em 0;
         }
         input,
         textarea {
@@ -101,6 +101,10 @@
                 });
                 sceneObject.searchables = searchables;
             }
+            if ($("input#note").val() != "") {
+                sceneObject.note = $("input#note").val();
+            }
+
             console.log(JSON.stringify(sceneObject));
 
             // Final rendering if all data is there
@@ -149,7 +153,7 @@
         </div>
         <!-- OPTIONS -->
         <div id="options">
-            <h2>Options</h2>
+            <h2>Menu Options</h2>
             *
             <span class="option"><input class="option" type="text" placeholder="Menu Option">
             <input class="link" type="text" placeholder="Link to"></span>
@@ -166,6 +170,12 @@
         </div>
         <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
     </form>
+
+    <div id="journalnote">
+        <h2>Journal note</h2>
+        <p>Optional note that will show up in the journal when the player gets to the scene.</p>
+        <input id="note" type="text" placeholder="Journal note">
+    </div>
 
     <div id="JSONExport">
         <h2>Render JSON</h2>

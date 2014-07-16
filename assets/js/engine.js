@@ -57,7 +57,7 @@ $(document).ready(function () {
                         // Create a new array if it's null
                         if (journalNotes == null)
                             journalNotes = [];
-                        if (journalNotes.indexOf(note) == -1) {
+                        if (journalNotes.indexOf(note) == -1 && note != null) {
                             journalNotes.push(note);
                             localStorage.setItem("notes", JSON.stringify(journalNotes));
                         }

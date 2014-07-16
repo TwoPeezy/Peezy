@@ -5,13 +5,31 @@
 
 <head>
     <title>Peezy Game</title>
+    <link rel=stylesheet href="assets/css/journal.css">
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var notes = JSON.parse(localStorage.getItem("notes"));
+            $(notes).each(function () {
+                $("ul#journal-items").prepend(
+                    "<li>" + this + "</li>"
+                );
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <div id="items">
-        <ul id="journal-items">
-        </ul>
+    <div class="wrapper">
+        <div id="journal">
+            <ul id="journal-items">
+            </ul>
+            <div class="push"></div>
+        </div>
+    </div>
+    <div id="menu-container">
+        <a id="menu" href="index.html">Menu</a>
     </div>
 </body>
 
