@@ -39,7 +39,9 @@ $(document).ready(function () {
                 // If the next scene has a lower ID value than the current scene, the player must be going backwards.
                 console.log((nextScene.id.split(".")[1]));
                 console.log((sceneController.currentScene.id.split(".")[1]));
-                if ((nextScene.id.split(".")[1]) > (sceneController.currentScene.id.split(".")[1]) || (sceneController.currentScene.id.split(".")[1]) == undefined) {
+                var nextSetting = nextScene.id.split(".");
+                var thisSetting = sceneController.currentScene.id.split(".");
+                if ((nextSetting[1] > thisSetting[1] && nextSetting[2] > thisSetting[2]) || nextSetting[0] > thisSetting[0]) {
 
                     try {
                         // Try to save the game
@@ -71,7 +73,7 @@ $(document).ready(function () {
                     console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
                     sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
                     //After remove
-                    console.log(JSON.stringify(sceneController.scenes['' + nextScene.id].options));
+                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
                 }
 
                 console.log(localStorage.getItem("notes"));
@@ -81,7 +83,6 @@ $(document).ready(function () {
 
             // Set the next scene
             sceneController.currentScene = nextScene;
-
             // Scroll to the top of the window after option is clicked
             window.scrollTo(0, 0);
         }
