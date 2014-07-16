@@ -182,5 +182,20 @@
             "id": "1"
         }],
         "id": "2.1.3"
+    },
+    "2.1.4": {
+        "name": "Continue Interrogating",
+        "image": "assets/img/2-Dark_City_Bank/2-1-4TellerContinue.png",
+        "description": "<p>‘So, tell me what you saw. I need to know who was here.’ His hands were shaking now. He begins to fidget in his chair, uncontrollably. I feel one of my eyebrows raise without my command. Suddenly, his arm slams into the desk and catapults the beans into his white shirt, and he begins to blubber like a baby, tears streaking down his face.</p>\n<p>‘I don’t know nothing, man. I’m just a simple man, with a wife and kids. I don’t know nothing, I don’t know nothing.’ I am now paying more attention to the thick sauce dripping down his professional-looking suit. I knew I needed to find more clues, and he wasn’t going to give me any more.</p>",
+        "options": [{
+            "text": "Go back to the lobby",
+            "scene": "2.0.0",
+            "id": "0"
+        }, {
+            "text": "Wrap his tie around his neck, strangling him",
+            "scene": "prison",
+            "id": "1"
+        }],
+        "id": "2.1.4"
     }
 }

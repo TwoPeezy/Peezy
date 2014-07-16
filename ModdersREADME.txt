@@ -3,6 +3,8 @@
 ||--   |    |       //     ||
 ||     |____|____ _//___   ||
         
+IF YOU'RE NOT A PROGRAMMER, USE newscene.html to create scenes.
+
 Scenes are the main functionality behind this game.
 In order to add a Scene, it requires 4 parameters:
 
