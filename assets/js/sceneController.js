@@ -59,18 +59,8 @@ function SceneController() {
     //    console.log(scenedata['1']);
     this.scenes = scenedata;
 
-    /*
-    MENU SCENE
-        */
-    var menuImage = "assets/img/0-Menus/PeezyMain.png";
-    var menuDesc = "<p>The name's Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me.</p><p> I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.</p>";
-    var menuOptions = [new MenuOption("New Game", '1.0.0'), new MenuOption("Continue", localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
-    // This scene is under 'menu' in the dictionary
-    this.scenes["menu"] = new Scene("Noire", menuImage, menuDesc, menuOptions);
-    this.scenes["menu"].id = "menu";
-    this.scenes["menu"].note = "Yay! Past the main menu. I've got the hang of this.";
-
     /* This is the current scene the game is on */
     this.currentScene;
-
+    /* The menu scenes that shouldn't be manipulated by the controller */
+    this.menuscenes;
 }

@@ -11,8 +11,25 @@ $(document).ready(function () {
     GAME INIT
         */
     function init() {
+        // New Scene controller
         sceneController = new SceneController();
+        /*
+    MENU SCENE - Need to create here, because of Continue functionality
+        */
+        var menuImage = "assets/img/0-Menus/PeezyMain.png";
+        var menuDesc = "<p>The name's Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me.</p><p> I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.</p>";
+        var menuOptions = [new MenuOption("New Game", '1.0.0'), new MenuOption("Continue", localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
+        // This scene is under 'menu' in the dictionary
+        sceneController.scenes["menu"] = new Scene("Noire", menuImage, menuDesc, menuOptions);
+        sceneController.scenes["menu"].id = "menu";
+        sceneController.scenes["menu"].note = "Yay! Past the main menu. I've got the hang of this.";
+
+        // Define the menu scenes
+        sceneController.menuScenes = ["menu", "prison", "about"];
+
+        // Get the menu from the current scenes
         var menu = sceneController.scenes.menu;
+        // Start the menu
         startScene(menu.name, menu.image, menu.description, menu.options);
         sceneController.currentScene = menu;
 
@@ -34,7 +51,7 @@ $(document).ready(function () {
         } else {
             // Saving the current scene so that the player can come back to it later.
             // Also making sure it doesn't save state as a menu
-            if ((nextScene.id != "menu") && (nextScene.id != "prison") && (nextScene.id != "about")) {
+            if (sceneController.menuScenes.indexOf(nextScene.id) == -1) {
 
                 // If the next scene has a lower ID value than the current scene, the player must be going backwards.
                 console.log((nextScene.id.split(".")[1]));
@@ -49,28 +66,12 @@ $(document).ready(function () {
                     } catch (e) {
                         console.log("Can't save progress\n" + e.message);
                     }
-
-
-                    try {
-                        // Try to save the note from the scene
-                        var journalNotes = JSON.parse(localStorage.getItem("notes"));
-                        // Get current note
-                        var note = sceneController.currentScene.note;
-                        // Create a new array if it's null
-                        if (journalNotes == null)
-                            journalNotes = [];
-                        if (journalNotes.indexOf(note) == -1 && note != null) {
-                            journalNotes.push(note);
-                            localStorage.setItem("notes", JSON.stringify(journalNotes));
-                        }
-                    } catch (e) {
-                        console.log("Can't save note\n" + e.message);
-                    }
                 } // We're going background, so lets remove the option we've traversed 
                 else {
+                    console.log("The current scene is either higher than nextScene or it's a menu.");
                     // Remove the option for the current scene just went through
                     //Before
-                    if ((sceneController.currentScene.id != "menu") && (sceneController.currentScene.id != "prison") && (sceneController.currentScene.id != "about")) {
+                    if (sceneController.menuScenes.indexOf(sceneController.currentScene.id) == -1) {
                         console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
                         sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
                         //After remove
@@ -78,7 +79,21 @@ $(document).ready(function () {
 
                     }
                 }
-
+                try {
+                    // Try to save the note from the scene
+                    var journalNotes = JSON.parse(localStorage.getItem("notes"));
+                    // Get current note
+                    var note = sceneController.currentScene.note;
+                    // Create a new array if it's null
+                    if (journalNotes == null)
+                        journalNotes = [];
+                    if ((journalNotes.indexOf(note) == -1) && (note != null)) {
+                        journalNotes.push(note);
+                        localStorage.setItem("notes", JSON.stringify(journalNotes));
+                    }
+                } catch (e) {
+                    console.log("Can't save note\n" + e.message);
+                }
                 console.log(localStorage.getItem("notes"));
             }
             // Start the next scene
