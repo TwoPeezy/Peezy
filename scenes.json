@@ -137,5 +137,50 @@
             }
                    ],
         "id": "2.1.0"
+    },
+    "2.1.1": {
+        "name": "Interrogate with Force",
+        "image": "assets/img/2-Dark_City_Bank/2-1-1TellerViolence.png",
+        "description": "I reach across the desk and grab a fistful of his collar. I pull his face close to mine, and snarl. ‘What do you know? Who robbed this place? There was an inside man, wasn’t there?!’\n‘Jeezus, man! I don’t know!’",
+        "options": [{
+            "text": "Interrogate with Words",
+            "scene": "2.1.3",
+            "id": "0"
+        }, {
+            "text": "Crush his trachea",
+            "scene": "prison",
+            "id": "1"
+        }],
+        "id": "2.1.1"
+    },
+    "2.1.2": {
+        "name": "Interrogate with words",
+        "image": "assets/img/2-Dark_City_Bank/2-1-2TellerWords.png",
+        "description": "<p>‘Did you see the face of the man who came in here?’</p>\n‘It was more than just one guy, it was three, or four. I lost track. Please man, I’m just a normal guy, with wife and kids. I don’t know nothing about this robbery.’ \n<p>I don’t trust him with that last sentence. He seems suspicious to me. I scribble in my notebook, before glancing quickly at his face. His eyes shift around nervously, and I notice a drop of sweat on his brow before he wipes it away. When he notices me looking, he replies with a too-wide grin. I think it’s time to move on to another area.</p>",
+        "options": [{
+            "text": "Go back to lobby",
+            "scene": "2.0.0",
+            "id": "0"
+        }, {
+            "text": "Neck-chop him to damage his esophagus",
+            "scene": "prison",
+            "id": "1"
+        }],
+        "id": "2.1.2"
+    },
+    "2.1.3": {
+        "name": "Interrogate with words",
+        "image": "assets/img/2-Dark_City_Bank/2-1-3TellerSecondTry.png",
+        "description": "I open my hand gently and he steps back quickly, almost tripping over his chair. He hastily smooths out his tie, his eyes wide. He nervously shuffles around underneath his desk, before pulling out a styrofoam clamshell box. He opens it and the thick smell of barbecue wafts out, enveloping my nostrils. The only thing left is a pile of baked beans in the corner.",
+        "options": [{
+            "text": "Continue interrogating",
+            "scene": "2.1.4",
+            "id": "0"
+        }, {
+            "text": "Eat the beans",
+            "scene": "prison",
+            "id": "1"
+        }],
+        "id": "2.1.3"
     }
 }
