@@ -70,10 +70,13 @@ $(document).ready(function () {
                 else {
                     // Remove the option for the current scene just went through
                     //Before
-                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
-                    sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
-                    //After remove
-                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+                    if ((sceneController.currentScene.id != "menu") && (sceneController.currentScene.id != "prison") && (sceneController.currentScene.id != "about")) {
+                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+                        sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
+                        //After remove
+                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+
+                    }
                 }
 
                 console.log(localStorage.getItem("notes"));
