@@ -36,18 +36,28 @@ $(document).ready(function () {
             // Start the next scene
             startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
 
-            // Set the next scene to the one that the option specifies
-            sceneController.currentScene = nextScene;
-
             // Saving the current scene so that the player can come back to it later.
             // Also making sure it doesn't save state as a menu
             if ((nextScene.id != "menu") && (nextScene.id != "prison") && (nextScene.id != "about")) {
+
+                // If the next scene has a lower ID value than the current scene, the player must be going backwards.
+                if (nextScene.id.numberValue < sceneController.currentScene.id.numberValue)
+                // Remove the option for the current scene just went through
+                    console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+                sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
+
+                // Try to save the game
                 try {
                     localStorage.setItem("savedgame", nextScene.id);
                 } catch (e) {
                     console.log("Can't save progress" + e.message);
                 }
             }
+
+            // Set the next scene
+            sceneController.currentScene = nextScene;
+
+            // Scroll to the top of the window after option is clicked
             window.scrollTo(0, 0);
         }
     });
@@ -92,4 +102,10 @@ $(document).ready(function () {
         $("#scene-image").css("float", "left");
         checkScreenSize();
     });
+    // Array Remove - By John Resig (MIT Licensed)
+    Array.prototype.remove = function (from, to) {
+        var rest = this.slice((to || from) + 1 || this.length);
+        this.length = from < 0 ? this.length + from : from;
+        return this.push.apply(this, rest);
+    };
 });
