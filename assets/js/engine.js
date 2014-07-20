@@ -72,8 +72,8 @@ $(document).ready(function () {
                     // Remove the option for the current scene just went through
                     //Before
                     if (sceneController.menuScenes.indexOf(sceneController.currentScene.id) == -1) {
-                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
-                        sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id);
+                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));  
+                                sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id-0, this.id-0);
                         //After remove
                         console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
 

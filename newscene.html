@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+	<meta name="viewport" content="user-scalable=no, initial-scale=, maximum-scale=1, 1minimum-scale=1, width=device-width, height=device-height" />
 <head>
     <title>New Scene</title>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
@@ -10,11 +10,11 @@
             font-family: helvetica, sans-serif, serif;
             font-size: 1.2em;
             text-align: left;
-            margin-left: 10%;
+            margin-left: 5%;
             background: rgba(150, 150, 140, 0.2);
         }
         img {
-            width: 30em;
+            width: 15em;
         }
         div {
             margin: 1em 0 1em 0;
@@ -22,7 +22,7 @@
         input,
         textarea {
             font-family: monospace;
-            padding: 0.4em;
+            padding: 0.5em;
             background: rgba(0, 0, 0, .05);
             border: none;
             outline: none;
@@ -33,6 +33,8 @@
             background: rgba(255, 255, 255, .5);
         }
         input.button {
+            width: 10em;
+        	   height: 2.5em;
             background: lightgray;
             border-style: outset;
             border-width: 1px;
@@ -55,7 +57,12 @@
             display: inline-block;
         }
         textarea {
-            width: 30em;
+            width: 15em;
+            height: 5em;
+        }
+        #options span, #searchables span{
+        	display: list-item;
+        	list-style: none;
         }
         #renderedJSON {
             color: blue;
