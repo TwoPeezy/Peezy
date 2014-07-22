@@ -47,8 +47,14 @@ $(document).ready(function () {
         // Getting the scene that the button has
         var nextScene = sceneController.scenes[sceneController.currentScene.options[this.id].scene];
         if (sceneController.currentScene.options[this.id].scene == "scene-textfield") {
+            // Toggle the textfield because they selected it
             $("#scene-textfield").toggle();
+        } else if (sceneController.currentScene.options[this.id].scene == "menu") {
+            // Reloading because I want those menu options back
+            location.reload();
         } else {
+            // Make sure that the search box isn't open
+            $("#scene-textfield").hide();
             // Saving the current scene so that the player can come back to it later.
             // Also making sure it doesn't save state as a menu
             if (sceneController.menuScenes.indexOf(nextScene.id) == -1) {
@@ -58,6 +64,11 @@ $(document).ready(function () {
                 console.log((sceneController.currentScene.id.split(".")[1]));
                 var nextSetting = nextScene.id.split(".");
                 var thisSetting = sceneController.currentScene.id.split(".");
+                console.log(nextSetting[1]);
+                console.log(thisSetting[1]);
+                console.log(nextSetting[2]);
+                console.log(thisSetting[2]);
+
                 if ((nextSetting[1] > thisSetting[1] && nextSetting[2] > thisSetting[2]) || nextSetting[0] > thisSetting[0]) {
 
                     try {
@@ -72,8 +83,8 @@ $(document).ready(function () {
                     // Remove the option for the current scene just went through
                     //Before
                     if (sceneController.menuScenes.indexOf(sceneController.currentScene.id) == -1) {
-                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));  
-                                sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id-0, this.id-0);
+                        console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
+                        sceneController.scenes['' + sceneController.currentScene.id].options.remove(this.id - 0, this.id - 0);
                         //After remove
                         console.log(JSON.stringify(sceneController.scenes['' + sceneController.currentScene.id].options));
 
