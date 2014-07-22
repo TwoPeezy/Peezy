@@ -2,18 +2,11 @@ html,
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
 }
 .wrapper {
-    min-height: 100%;
-    margin: 0 auto -5em;
+    margin: auto;
 }
-#scene {
-    margin: 1em;
-    margin-top: 0;
-}
-#scene-image {
+#scene {} #scene-image {
     float: left;
     height: 15em;
     width: 15em;
@@ -74,6 +67,7 @@ span.option:active {
     border-style: solid;
 }
 #journal-container {
+    margin: 1em;
     text-align: center;
 }
 a#journal {
@@ -96,8 +90,4 @@ a#journal:hover {
     display: none;
     color: gray;
     font-size: 1.5em;
-}
-#journal-container,
-.push {
-    height: 5em;
 }

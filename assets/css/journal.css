@@ -2,12 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
 }
 .wrapper {
-    min-height: 100%;
-    margin: 0 auto -5em;
     font-family: serif, monospace;
 }
 #journal-items {
@@ -25,6 +21,7 @@ ul#journal-items {
     border-top-width: 0;
 }
 #menu-container {
+    margin: 1em;
     text-align: center;
 }
 a#menu {
@@ -43,15 +40,4 @@ a#menu:hover,
 a#menu:active {
     color: black;
     border: 2px solid black;
-}
-#menu-container,
-.push {
-    height: 5em;
-}
-/* Fixes menu and note overlap for mobile devices */
-
-@media screen and (max-width: 500px) {
-    .wrapper {
-        margin: 0 auto -2em;
-    }
 }
