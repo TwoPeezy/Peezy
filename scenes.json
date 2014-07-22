@@ -3,7 +3,7 @@
         "id": "prison",
         "name": "Prison",
         "image": "assets/img/0-Menus/prison.png",
-        "description": "Honestly, why'd you do that? There were plenty of other options. Look where that got you, stupid.",
+        "description": "The gentle caress of a man with too many tattoos. You never imagined yourself here, of all places. Just let it happen. Shhh... only dreams now.",
         "options": [{
             "text": "Die and Reincarnate yourself.",
             "scene": "menu",
@@ -90,7 +90,7 @@
         "id": "2.0.0",
         "name": "Dark City Bank",
         "image": "assets/img/2-Dark_City_Bank/2-0-0DarkCityBank.png",
-        "description": "<p>Dark City Bank. What a shithole. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes.</p>",
+        "description": "<p>Dark City Bank. What a load of crap. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes.</p>",
         "options": [{
             "text": "Talk to the teller",
             "scene": "2.1.0",
@@ -198,8 +198,8 @@
     },
     "2.2.0": {
         "name": "Talk to bystander",
-        "image": "assets/img/2-Dark_City_Bank/2-1-4TellerContinue.png",
-        "description": "<p>A middle sized man in his 30s. At least, I thought. His beard was beginning to grey at the edges. He waves me over to him, barrel belly swinging in unison with every beckon.</p><p>‘Today’s bein arwhfull,’ he sputters, ‘Ferst this mornin’ my wife told me that ar’m too fat for deh cloffes she buys me’ -- he chews on his teeth for a moment -- “and now my only bank harve been robbed. I jus’ want’d to buy clothes daht fit me, underr’stand?’ Seeming fatiqued, he reclines his weight to the building support post.</p>\n\n<p>He's a lost cause.</p>",
+        "image": "assets/img/2-Dark_City_Bank/2-2-0Bystander.png",
+        "description": "<p>A middle sized man in his 30s. At least, I thought. His beard was beginning to grey at the edges. He waves me over to him, barrel belly swinging in unison with every beckon.</p><p>‘Today’s bein arwhfull,’ he sputters, ‘Ferst this mornin’ my wife told me that ar’m too fat for deh cloffes she buys me’ -- he chews on his teeth for a moment -- “and now my only bank harve been robbed. I jus’ want’d to buy clothes daht fit me, underr’stand?’ Seeming fatigued, he reclines his weight to the building support post.</p>\n\n<p>He's a lost cause.</p>",
         "options": [{
             "text": "Back to lobby",
             "scene": "2.0.0",
@@ -214,8 +214,8 @@
     },
     "2.3.0": {
         "name": "Check Security Cameras",
-        "image": "assets/img/2-Dark_City_Bank/2-1-4TellerContinue",
-        "description": "<i>Kchshhshhhhhh</i>. The monitor conjures an image. A man wearing a black mask, build of a youth, struts into Dark City Bank. He walks straight back through the employees only door. Through the shroud of darkness, the register flies open. The bills go into his bag, and out he walks. Carefully and calculated. <i>He must work here.</i>",
+        "image": "assets/img/2-Dark_City_Bank/2-3-0Camera.png",
+        "description": "<i>Kchshhshhhhhh</i>. The monitor conjures an image. A man wearing a black mask, build of a youth, struts into Dark City Bank. He walks straight back through the employees only door. Through the shroud of darkness, the register flies open. The bills go into his bag, and he then pushes his way into the vault. He disappears momentarily, out of view of the camera. The vault door seems to be open already. Carefully and calculated. <i>He must work here.</i>",
         "options": [{
             "text": "Back to lobby",
             "scene": "2.0.0",
@@ -223,5 +223,32 @@
         }],
         "id": "2.3.0",
         "note": "Security cameras: the guy looks like he knows the place well."
+    },
+    "2.4.1": {
+        "name": "Register",
+        "image": "assets/img/2-Dark_City_Bank/2-4-1Register.png",
+        "description": "Looks like the robber only took the higher-numbered bills. I can’t glean any fingerprints off of the register, it’s touched by hundreds of tellers a day. Maybe even <i>thousands</i>. Eugh. I can’t wait to wash my hands.",
+        "options": [{
+            "text": "Back to lobby",
+            "scene": "2.0.0",
+            "id": "0"
+        }],
+        "id": "2.4.1"
+    },
+    "2.4.2": {
+        "name": "The Vault",
+        "image": "assets/img/2-Dark_City_Bank/2-4-2Vault.png",
+        "description": "The vault is shiny chrome. Aha! A fingerprint, clear as day. I just need to go back to my computer and run this through the police system. Hm… I wonder whose butt I get to kick tonight. ",
+        "options": [{
+            "text": "Go to apartment",
+            "scene": "3.0.0",
+            "id": "0"
+        }, {
+            "text": "Back to lobby",
+            "scene": "2.0.0",
+            "id": "1"
+        }],
+        "id": "2.4.2",
+        "note": "Fingerprint found on vault door!"
     }
 }
