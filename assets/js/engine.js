@@ -136,7 +136,7 @@ $(document).ready(function () {
                     sceneController.currentScene = nextScene;
                     $("#scene-textfield").toggle();
                 } else {
-                    $("#search-message").css("display", "inline");
+                    $("#search-message").css("display", "block");
                 }
             }
         }
@@ -148,6 +148,7 @@ $(document).ready(function () {
     function checkScreenSize() {
         if ((window.innerWidth / window.innerHeight) < 4 / 3) {
             $("#scene-image").css("float", "none");
+            $("#image-div").css("text-align", "center");
         }
     }
     /*
@@ -155,6 +156,7 @@ $(document).ready(function () {
         */
     $(window).resize(function () {
         $("#scene-image").css("float", "left");
+        $("#image-div").css("text-align", "left");
         checkScreenSize();
     });
     // Array Remove - By John Resig (MIT Licensed)
