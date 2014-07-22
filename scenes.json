@@ -250,5 +250,17 @@
         }],
         "id": "2.4.2",
         "note": "Fingerprint found on vault door!"
+    },
+    "2.4.3": {
+        "name": "Bystander's Pant Pocket",
+        "image": "assets/img/2-Dark_City_Bank/2-4-3PantPocket.png",
+        "description": "He claims that this warehouse key isn’t his. I claim I accidentally broke his nose.",
+        "options": [{
+            "text": "Back to lobby",
+            "scene": "2.0.0",
+            "id": "0"
+        }],
+        "id": "2.4.3",
+        "note": "I wonder what door this key unlocks...."
     }
 }
