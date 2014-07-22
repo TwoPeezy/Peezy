@@ -48,3 +48,10 @@ a#menu:active {
 .push {
     height: 5em;
 }
+/* Fixes menu and note overlap for mobile devices */
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        margin: 0 auto -2em;
+    }
+}
