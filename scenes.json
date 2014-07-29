@@ -107,6 +107,10 @@
             "text": "Search the premises",
             "scene": "scene-textfield",
             "id": 3
+        }, {
+            "text": "Go back to apartment",
+            "scene": "3.0.0",
+            "id": 4
         }],
         "searchables": {
             "register": "2.4.1",
