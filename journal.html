@@ -11,11 +11,18 @@
         $(document).ready(function () {
 
             var notes = JSON.parse(localStorage.getItem("notes"));
-            $(notes).each(function () {
+            if (notes != null) {
+                $(notes).each(function () {
+                    $("ul#journal-items").prepend(
+                        "<li>" + this + "</li>"
+                    );
+                });
+            } else {
                 $("ul#journal-items").prepend(
-                    "<li>" + this + "</li>"
+                    "<li>" + "You have no notes. Actually do something. You're a horrible detective." + "</li>"
                 );
-            });
+            }
+
         });
     </script>
 </head>

@@ -107,6 +107,10 @@
             "text": "Search the premises",
             "scene": "scene-textfield",
             "id": 3
+        }, {
+            "text": "Go back to office",
+            "scene": "3.0.0",
+            "id": 4
         }],
         "searchables": {
             "register": "2.4.1",
@@ -240,7 +244,7 @@
         "image": "assets/img/2-Dark_City_Bank/2-4-2Vault.png",
         "description": "The vault is shiny chrome. Aha! A fingerprint, clear as day. I just need to go back to my computer and run this through the police system. Hm… I wonder whose butt I get to kick tonight. ",
         "options": [{
-            "text": "Go to apartment",
+            "text": "Go to office",
             "scene": "3.0.0",
             "id": "0"
         }, {
@@ -250,5 +254,181 @@
         }],
         "id": "2.4.2",
         "note": "Fingerprint found on vault door!"
+    },
+    "2.4.3": {
+        "name": "Bystander's Pant Pocket",
+        "image": "assets/img/2-Dark_City_Bank/2-4-3PantPocket.png",
+        "description": "He claims that this warehouse key isn’t his. I claim I accidentally broke his nose.",
+        "options": [{
+            "text": "Back to lobby",
+            "scene": "2.0.0",
+            "id": "0"
+        }],
+        "id": "2.4.3",
+        "note": "I wonder what door this key unlocks...."
+    },
+    "3.0.0": {
+        "name": "Peezy's Office",
+        "image": "assets/img/3-Office/3-0-0Office.png",
+        "description": "Back at my office. Better pour myself a good drink, and run the fingerprint through the scanner. This might take a while... I should do something while I wait.",
+        "options": [{
+            "text": "Play a game",
+            "scene": "3.1.0",
+            "id": "0"
+        }, {
+            "text": "Look at the news",
+            "scene": "3.2.0",
+            "id": "1"
+        }, {
+            "text": "Write a novel ",
+            "scene": "3.3.0",
+            "id": "2"
+        }, {
+            "text": "Take a dump",
+            "scene": "3.4.0",
+            "id": "3"
+        }],
+        "id": "3.0.0"
+    },
+    "3.1.0": {
+        "name": "Play a game",
+        "image": "assets/img/3-Office/3-1-0Games.png",
+        "description": "Ahh… Choose Your Own Adventure. I love it. What should my character’s name be?",
+        "options": [{
+            "text": "Peezy",
+            "scene": "3.1.1",
+            "id": "0"
+        }, {
+            "text": "Peezy",
+            "scene": "3.1.1",
+            "id": "1"
+        }, {
+            "text": "Peezy",
+            "scene": "3.1.1",
+            "id": "2"
+        }, {
+            "text": "Guy Peezy",
+            "scene": "3.1.1",
+            "id": "3"
+        }],
+        "id": "3.1.0",
+        "note": "I love vidya gaems"
+    },
+    "3.1.1": {
+        "name": "A Dungeon",
+        "image": "assets/img/3-Office/3-1-1Squid.png",
+        "description": "Alright, Peezy it is. Looks like I’m in a dungeon. Aah! A giant squid warrior! What should I do? I don’t have a gun!...er sword!",
+        "options": [{
+            "text": "Fight with your bare hands",
+            "scene": "3.1.2",
+            "id": "0"
+        }, {
+            "text": "Dance seductively",
+            "scene": "3.1.2",
+            "id": "1"
+        }, {
+            "text": "Tickle his tentacles",
+            "scene": "3.1.2",
+            "id": "2"
+        }, {
+            "text": "Uppercut to the jaw!",
+            "scene": "3.1.2",
+            "id": "3"
+        }],
+        "id": "3.1.1"
+    },
+    "3.1.2": {
+        "name": "The Illusion of Choice",
+        "image": "assets/img/3-Office/Fingerprint.png",
+        "description": "Dang! It didn’t work. I guess I’ll have to… I’m dead already. Game over. Well, on the bright side, the fingerprint made it through the system! It looks like… the fingerprint belongs to a ‘Richard Dickerson’ at the nearby ‘Fix-Er-Up Mechanic’. Guess I’ll have to pay Dick a visit…",
+        "options": [{
+            "text": "Pay Dick a visit",
+            "scene": "4.0.0",
+            "id": "0"
+        }],
+        "id": "3.1.2",
+        "note": "The fingerprint from the vault belonged to Richard Dickerson"
+    },
+    "3.2.0": {
+        "name": "Look at the news",
+        "image": "assets/img/3-Office/Fingerprint.png",
+        "description": "Well… the Middle East is in turmoil… again. Oh, looks like the fingerprint is done processing! It belongs to a ‘Richard Dickerson’ at the nearby ‘Fix-Er-Up Mechanic’. Guess I’ll have to pay Dick a visit…",
+        "options": [{
+            "text": "Pay Dick a visit",
+            "scene": "4.0.0",
+            "id": "0"
+        }],
+        "id": "3.2.0",
+        "note": "The news is always a waste of time..."
+    },
+    "3.3.0": {
+        "name": "Write a novel",
+        "image": "assets/img/3-Office/3-3-0Novel.png",
+        "description": "Hmm… what should my novel be about?",
+        "options": [{
+            "text": "Twilight self-insert fanfic",
+            "scene": "3.3.1",
+            "id": "0"
+        }, {
+            "text": "Sexy Adventure Time / Futurama crossover",
+            "scene": "3.3.1",
+            "id": "1"
+        }, {
+            "text": "Hardboiled Noire Cop Fiction",
+            "scene": "3.3.1",
+            "id": "2"
+        }, {
+            "text": "‘The Wonderful World of Squid and Cephalopalian Life’",
+            "scene": "3.3.1",
+            "id": "3"
+        }],
+        "id": "3.3.0"
+    },
+    "3.3.1": {
+        "name": "The Illusion of Choice",
+        "image": "assets/img/3-Office/Fingerprint.png",
+        "description": "Ehh… I don’t know what to write. Oh, looks like the fingerprint is done processing! It belongs to a ‘Richard Dickerson’ at the nearby ‘Fix-Er-Up Mechanic’. Guess I’ll have to pay Dick a visit…",
+        "options": [{
+            "text": "Pay Dick a visit",
+            "scene": "4.0.0",
+            "id": "0"
+        }],
+        "id": "3.3.1",
+        "note": "Still... dat Jake + Bender shipping... <3"
+    },
+    "3.4.0": {
+        "name": "Take a dump",
+        "image": "assets/img/3-Office/3-4-0Poop.png",
+        "description": "The toilet seat is cold against the soft skin of my buttcheeks. I feel a small protrusion in between my two clenched gluteus muscles, and I push harder. A satisfying plop resounds in the basin beneath my massive moon.",
+        "options": [{
+            "text": "Wipe your butt",
+            "scene": "3.4.1",
+            "id": "0"
+        }, {
+            "text": "Pull up your pants",
+            "scene": "3.4.1",
+            "id": "1"
+        }, {
+            "text": "Flush the toilet",
+            "scene": "3.4.1",
+            "id": "2"
+        }, {
+            "text": "Wash your hands",
+            "scene": "3.4.1",
+            "id": "3"
+        }],
+        "id": "3.4.0",
+        "note": "There's nothing like taking a pre-case poop."
+    },
+    "3.4.1": {
+        "name": "The Illusion of Choice",
+        "image": "assets/img/3-Office/Fingerprint.png",
+        "description": "Aaaaahhh… that feels better. Although, I feel like I’m forgetting something. What’s that beeping? Oh, looks like the fingerprint is done processing! It belongs to a ‘Richard Dickerson’ at the nearby ‘Fix-Er-Up Mechanic’. Guess I’ll have to pay Dick a visit…",
+        "options": [{
+            "text": "Pay Dick a visit",
+            "scene": "4.0.0",
+            "id": "0"
+        }],
+        "id": "3.4.1"
     }
 }
