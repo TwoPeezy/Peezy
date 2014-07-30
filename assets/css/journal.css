@@ -17,21 +17,24 @@ ul#journal-items {
 #journal-items li {
     padding: 1em;
     background: rgba(200, 200, 200, 0.1);
-    border: 1px solid lightgray;
-    border-top-width: 0;
+    border-bottom: 1px solid lightgray;
 }
 #menu-container {
-    margin: 1em;
-    text-align: center;
+    padding: 1em 0 1em 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-bottom: 1px solid lightgray;
+}
+#menu-button {
+    display: inline;
+    float: right;
 }
 a#menu {
     color: gray;
     text-decoration: none;
     cursor: pointer;
-    padding: 1em 5em 1em 5em;
-    background: rgba(200, 200, 200, .2);
+    padding: 1em;
     font-family: helvetica, sans-serif, serif;
-    border: 2px solid gray;
     transition: border .25s ease;
     -moz-transition: border .25s ease-in;
     -webkit-transition: border .25s ease-in;
@@ -39,5 +42,5 @@ a#menu {
 a#menu:hover,
 a#menu:active {
     color: black;
-    border: 2px solid black;
+    border-color: black;
 }

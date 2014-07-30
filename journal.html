@@ -6,6 +6,7 @@
 <head>
     <title>Peezy Game</title>
     <link rel=stylesheet href="assets/css/journal.css">
+    <link rel="stylesheet" href="assets/fonts/style.css">
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
@@ -30,7 +31,10 @@
 <body>
     <div class="wrapper">
         <div id="menu-container">
-            <a id="menu" href="index.html">Menu</a>
+            <span>Notes</span>
+            <div id="menu-button">
+                <a id="menu" href="index.html"><span aria-hidden="true" data-icon="&#8962;" class="icon-home"></span></a>
+            </div>
         </div>
         <div id="journal">
             <ul id="journal-items">
@@ -38,6 +42,7 @@
             <div class="push"></div>
         </div>
     </div>
+
 </body>
 
 </html>
