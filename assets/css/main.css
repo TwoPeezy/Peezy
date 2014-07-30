@@ -6,7 +6,10 @@ body {
 .wrapper {
     margin: auto;
 }
-#scene {} #scene-image {
+#scene {
+    margin: 1em;
+}
+#scene-image {
     float: left;
     height: 15em;
     width: 15em;
