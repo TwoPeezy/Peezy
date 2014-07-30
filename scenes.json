@@ -90,7 +90,7 @@
         "id": "2.0.0",
         "name": "Dark City Bank",
         "image": "assets/img/2-Dark_City_Bank/2-0-0DarkCityBank.png",
-        "description": "<p>Dark City Bank. What a load of crap. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes.</p>",
+        "description": "<p>Dark City Bank. What a load of crap. The lights on the high ceilings barely touched the ground. They might as well give free flashlights with every checkbook. Torches would light the place better than these flickering fluorescents. Crystal’s heels clacked on the linoleum tile, distracting me. Rather, her whole existence distracted me, but that’s beside the point. I opened my journal, to take notes. I think I can see the vault in the back... as well as the register. Those would both be helpful to look at. Especially the vault. I need to remember to look at the vault. I'll write it down. <i>Look at the vault while searching the premises.</i> There, that should do it. I just need to make sure to look at my notebook so I remember to look at the vault. Because the vault is important to look at. It'll probably make or break the case. Seriously. I need to look at that vault.</p>",
         "options": [{
             "text": "Talk to the teller",
             "scene": "2.1.0",
@@ -107,10 +107,6 @@
             "text": "Search the premises",
             "scene": "scene-textfield",
             "id": 3
-        }, {
-            "text": "Go back to office",
-            "scene": "3.0.0",
-            "id": 4
         }],
         "searchables": {
             "register": "2.4.1",
