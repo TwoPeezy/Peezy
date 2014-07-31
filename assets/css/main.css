@@ -7,7 +7,7 @@ body {
     margin: auto;
 }
 #scene {
-    margin: 1em;
+    margin: 0 8% 0 8%;
 }
 #scene-image {
     float: left;
@@ -17,8 +17,8 @@ body {
 }
 #scene-description {
     padding-top: 1em;
-    font-family: serif;
-    font-size: 1.5em;
+    font-family: 'LidoSTF', serif;
+    font-size: 1.35em;
 }
 #scene-options {
     -webkit-touch-callout: none;
@@ -50,7 +50,7 @@ body {
 span.option {
     color: gray;
     display: inline-table;
-    font-family: serif, monospace, serif;
+    font-family: 'LidoSTF', serif;
     font-size: 1.8em;
     padding: .5em;
     margin: 0.4em;
@@ -83,14 +83,9 @@ a#journal {
     text-decoration: none;
     cursor: pointer;
     padding: 1em;
-    font-family: helvetica, sans-serif, serif;
-    transition: border .25s ease;
-    -moz-transition: border .25s ease-in;
-    -webkit-transition: border .25s ease-in;
 }
 a#journal:hover {
     color: black;
-    border-color: black;
 }
 #search-message {
     display: none;

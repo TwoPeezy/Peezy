@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 .wrapper {
-    font-family: serif, monospace;
+    font-family: 'LidoSTF', serif;
 }
 #journal-items {
     font-size: 1.5em;
@@ -34,10 +34,6 @@ a#menu {
     text-decoration: none;
     cursor: pointer;
     padding: 1em;
-    font-family: helvetica, sans-serif, serif;
-    transition: border .25s ease;
-    -moz-transition: border .25s ease-in;
-    -webkit-transition: border .25s ease-in;
 }
 a#menu:hover,
 a#menu:active {
