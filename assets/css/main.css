@@ -4,10 +4,10 @@ body {
     padding: 0;
 }
 .wrapper {
-    margin: auto;
+    margin: 0;
 }
 #scene {
-    margin: 0 8% 0 8%;
+    margin: 0 15% 0 15%;
 }
 #scene-image {
     float: left;
@@ -18,7 +18,8 @@ body {
 #scene-description {
     padding-top: 1em;
     font-family: 'LidoSTF', serif;
-    font-size: 1.35em;
+    font-size: 1.5em;
+    line-height: 1.5em;
 }
 #scene-options {
     -webkit-touch-callout: none;

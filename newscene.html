@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<meta name="viewport" content="user-scalable=no, initial-scale=, maximum-scale=1, 1minimum-scale=1, width=device-width, height=device-height" />
+<meta name="viewport" content="user-scalable=no, initial-scale=, maximum-scale=1, 1minimum-scale=1, width=device-width, height=device-height" />
+
 <head>
     <title>New Scene</title>
     <script type="text/javascript" src="assets/js/jquery-2.1.1.min.js"></script>
@@ -34,7 +35,7 @@
         }
         input.button {
             width: 10em;
-        	   height: 2.5em;
+            height: 2.5em;
             background: lightgray;
             border-style: outset;
             border-width: 1px;
@@ -50,6 +51,9 @@
         .required {
             background: rgba(255, 0, 0, 0.2);
         }
+        .browse {
+            width: 6em;
+        }
         input.option,
         input.searchable,
         input.link,
@@ -60,9 +64,10 @@
             width: 15em;
             height: 5em;
         }
-        #options span, #searchables span{
-        	display: list-item;
-        	list-style: none;
+        #options span,
+        #searchables span {
+            display: list-item;
+            list-style: none;
         }
         #renderedJSON {
             color: blue;
@@ -140,6 +145,11 @@
                     }
                 }
             });
+
+            $("#image-browse").change(function () {
+                var path = "assets/img/" + $("#image-browse").val().replace(/^.*[\\\/]/, '');
+                $("#image").val(path);
+            });
         });
     </script>
 </head>
@@ -155,6 +165,7 @@
             <input id="name" type="text" placeholder="Name">
             <br />*
             <input id="image" type="text" placeholder="image URL">
+            <input id="image-browse" class="browse" type="file">
             <br />*
             <textarea id="description" placeholder="Description"></textarea>
         </div>
@@ -166,7 +177,7 @@
             <input class="link" type="text" placeholder="Link to"></span>
             <br />
         </div>
-        <input class="button" type="button" onclick="addOptionField()" value="Add option">
+        <input class="button" type="button" onclick="addOptionField();" value="Add option">
 
         <!-- SEARCHABLES -->
         <div id="searchables">
@@ -175,7 +186,7 @@
             <input class='link' type='text' placeholder='Link to'></span>
             <br />
         </div>
-        <input class="button" type="button" onclick="addSearchableField()" value="Add searchable">
+        <input class="button" type="button" onclick="addSearchableField();" value="Add searchable">
     </form>
 
     <div id="journalnote">
@@ -195,7 +206,7 @@
     </div>
     <div>
         <h2>Reference</h2>
-        <img src="assets/img/0-Menus/newscenehelp.png">
+        <img src="assets/img/Menus/newscenehelp.png">
     </div>
 </body>
 
