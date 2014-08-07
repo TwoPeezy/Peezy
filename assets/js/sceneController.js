@@ -1,5 +1,15 @@
+/*
+Resource used by Peezy for each page.
+
+Scene Composition
+- title name        Goes beside the title on the window like Peezy - 'Title name'
+- image             Image that gives the scene presence
+- description       A gripping narrative that compells the player to tears
+- button ptions     Different options to continue the adventure
+    
+*/
 function Scene(name, image, description, options) {
-    // Keeping track of scene ID for saving
+    // DON'T TOUCH. Keeping track of scene ID for saving and MenuOption links.
     this.id;
     // Name of scene
     this.name = name;
@@ -31,7 +41,9 @@ function startScene(scene) {
         scene.options[current].id = current;
     }
 }
-
+/*
+Button options that show up at the bottom of the scene
+    */
 function MenuOption(text, scene) {
     // Relevant only for use in the engine. Serves as the index of the array.
     this.id;
@@ -40,14 +52,19 @@ function MenuOption(text, scene) {
     // Scene link
     this.scene = scene;
 }
-
+/*
+Items that the player can search for in with the search textfield.
+    Note: a MenuOption has to have a link to 'scene-textfield'
+    */
 function Searchable(name, link) {
     // Text that is searchable
     this.name = name;
     // Link to a scene
     this.link = link;
 }
-
+/*
+The primary controller to scene manipulation used by the engine
+    */
 function SceneController() {
     // Use this variable to get or set the scenes in this game
     this.scenes;
