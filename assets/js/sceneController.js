@@ -47,18 +47,6 @@ function SceneController() {
 
     /* Use this variable to get or set the scenes in this game */
     this.scenes;
-    var scenedata = {};
-    $.ajax({
-        url: "scenes.json",
-        dataType: 'json',
-        success: function (data) {
-            scenedata = data;
-        },
-        async: false
-    });
-    //    console.log(scenedata['1']);
-    this.scenes = scenedata;
-
     /* This is the current scene the game is on */
     this.currentScene;
     /* The menu scenes that shouldn't be manipulated by the controller */

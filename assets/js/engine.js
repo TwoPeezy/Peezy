@@ -11,11 +11,24 @@ $(document).ready(function () {
     GAME INIT
         */
     function init() {
-        // New Scene controller
+        /*
+        New Scene controller
+            */
         sceneController = new SceneController();
         /*
-    MENU SCENE - Need to create here, because of Continue functionality
-        */
+        Getting the scenes from scenes.json
+            */
+        $.ajax({
+            url: "scenes.json",
+            dataType: 'json',
+            success: function (data) {
+                sceneController.scenes = data;
+            },
+            async: false
+        });
+        /*
+        MENU SCENE - Need to create here, because of Continue functionality
+            */
         var menuImage = "assets/img/0-Menus/PeezyMain.png";
         var menuDesc = "<p>The name's Guy Peezy, private eye. Once upon a time, I was a cop. I didn't abide by the rules, I got cases closed on my own terms. Broken bones, a mild case of major blood loss. The police commissioner thought I was casting a bad shadow on the team, so he got rid of me.</p><p> I've been solving easy cases ever since then. Missing pets weren't really my style, but I kept working, waiting for that one case that would put me into the limelight again. That was when Crystal showed up, and my career changed forever.</p>";
         var menuOptions = [new MenuOption("New Game", '1.0.0'), new MenuOption("Continue", localStorage.getItem("savedgame")), new MenuOption("About", 'about')];
@@ -27,6 +40,9 @@ $(document).ready(function () {
         // Define the menu scenes
         sceneController.menuScenes = ["menu", "prison", "about"];
 
+        /*
+        START MENU SCENE
+            */
         // Get the menu from the current scenes
         var menu = sceneController.scenes.menu;
         // Start the menu
@@ -142,6 +158,8 @@ $(document).ready(function () {
         }
     });
 
+    /*------- NEEDS TO BE REFACTORED, BADLY ------ */
+
     /*
     Mobile support - Screen resizing
         */
@@ -159,6 +177,9 @@ $(document).ready(function () {
         $("#image-div").css("text-align", "left");
         checkScreenSize();
     });
+
+    /* -------------------------------------------- */
+
     // Array Remove - By John Resig (MIT Licensed)
     Array.prototype.remove = function (from, to) {
         var rest = this.slice((to || from) + 1 || this.length);
