@@ -1,5 +1,4 @@
 var sceneController;
-var isMobile;
 $(document).ready(function () {
     init();
     checkScreenSize();
@@ -163,9 +162,7 @@ $(document).ready(function () {
             $("#image-div").css("text-align", "center");
         }
     }
-    /*
-    If they can resize, they're not on mobile
-        */
+    // If they can resize, they're probably not using a phone
     $(window).resize(function () {
         $("#scene-image").css("float", "left");
         $("#image-div").css("text-align", "left");
