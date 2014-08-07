@@ -46,7 +46,7 @@ $(document).ready(function () {
         // Get the menu from the current scenes
         var menu = sceneController.scenes.menu;
         // Start the menu
-        startScene(menu.name, menu.image, menu.description, menu.options);
+        startScene(menu);
         sceneController.currentScene = menu;
 
         // Change the css of the continue button if there's no saved game
@@ -124,7 +124,7 @@ $(document).ready(function () {
                 console.log(localStorage.getItem("notes"));
             }
             // Start the next scene
-            startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
+            startScene(nextScene);
 
             // Set the next scene
             sceneController.currentScene = nextScene;
@@ -148,7 +148,7 @@ $(document).ready(function () {
                 if (sceneController.currentScene.searchables["" + text] != null) {
                     $("#search-message").css("display", "none");
                     var nextScene = sceneController.scenes[sceneController.currentScene.searchables["" + text]];
-                    startScene(nextScene.name, nextScene.image, nextScene.description, nextScene.options);
+                    startScene(nextScene);
                     sceneController.currentScene = nextScene;
                     $("#scene-textfield").toggle();
                 } else {
