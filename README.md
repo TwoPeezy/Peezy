@@ -1,3 +1,5 @@
-peezy
+Peezy
 =====
-### A random Noire game that we have come to love.
+A very random Noire game that we have come to love.
+
+**Licensed under MIT.**
