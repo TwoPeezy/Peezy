@@ -5,8 +5,12 @@ Scene Composition
 - title name        Goes beside the title on the window like Peezy - 'Title name'
 - image             Image that gives the scene presence
 - description       A gripping narrative that compells the player to tears
-- button ptions     Different options to continue the adventure
+- button options    Different options to continue the adventure
+- *searchables      Searchable items with the scene-textfield
+- *note             Optional note that the player can read in the journal
     
+*Asterisk = OPTIONAL. Not essential for every scene.
+
 */
 function Scene(name, image, description, options) {
     // DON'T TOUCH. Keeping track of scene ID for saving and MenuOption links.
@@ -70,6 +74,6 @@ function SceneController() {
     this.scenes;
     // This is the current scene the game is on
     this.currentScene;
-    // The menu scenes that shouldn't be manipulated by the controller
+    // The menu scenes that shouldn't be manipulated by the engine
     this.menuscenes;
 }
