@@ -162,6 +162,7 @@ $(document).ready(function () {
             $("#image-div").css("text-align", "center");
         }
     }
+    
     // If they can resize, they're probably not using a phone
     $(window).resize(function () {
         $("#scene-image").css("float", "left");
